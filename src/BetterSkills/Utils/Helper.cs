@@ -1,5 +1,4 @@
 ﻿using BetterSkills.Settings;
-using TaleWorlds.Core;
 using TaleWorlds.Library;
 
 namespace BetterSkills.Utils {
