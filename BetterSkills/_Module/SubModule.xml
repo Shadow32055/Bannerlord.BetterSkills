@@ -1,16 +1,9 @@
 <Module>
   <Name value="Better Skills" />
   <Id value="BetterSkills" />
-  <Version value="v1.2.17" />
-  <SingleplayerModule value="true" />
-  <MultiplayerModule value="false" />
-  <DependedModules>
-    <DependedModule Id="Native" />
-    <DependedModule Id="SandBoxCore" />
-    <DependedModule Id="Sandbox" />
-    <DependedModule Id="CustomBattle" />
-    <DependedModule Id="StoryMode" />
-  </DependedModules>
+  <Version value="d0.0.0" />
+  <ModuleType value="Community" />
+  <ModuleCategory value="Singleplayer" />
   <SubModules>
     <SubModule>
       <Name value="BetterSkills" />
