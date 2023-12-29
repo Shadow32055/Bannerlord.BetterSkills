@@ -79,11 +79,15 @@ namespace BetterSkills.Settings {
 
         [SettingPropertyGroup("Endurance")]
         [SettingPropertyFloatingInteger("Mounted weapon damage penalty", -100f, 0f, "0.00", Order = 0, RequireRestart = false, HintText = genericHintText)]
-        public float HorseWeaponDamagePenaltyValue { get; set; } = -0.2f;
+        public float MountWeaponDamagePenaltyValue { get; set; } = -0.2f;
 
         [SettingPropertyGroup("Endurance")]
         [SettingPropertyFloatingInteger("Mounted weapon speed & reload penalty", -100f, 0f, "0.00", Order = 0, RequireRestart = false, HintText = genericHintText)]
-        public float HorseWeaponSpeedPenaltyValue { get; set; } = -0.2f;
+        public float MountWeaponSpeedPenaltyValue { get; set; } = -0.3f;
+
+        [SettingPropertyGroup("Endurance")]
+        [SettingPropertyFloatingInteger("Dismount resistance", 0f, 100f, "0.00", Order = 0, RequireRestart = false, HintText = genericHintText)]
+        public float DismountResistanceValue { get; set; } = 0.1f;
 
         [SettingPropertyGroup("Endurance")]
         [SettingPropertyFloatingInteger("Running speed increased by", 0f, 100f, "0.00", Order = 0, RequireRestart = false, HintText = genericHintText)]
@@ -92,6 +96,14 @@ namespace BetterSkills.Settings {
         [SettingPropertyGroup("Endurance")]
         [SettingPropertyFloatingInteger("Weight penalty reduced by", 0f, 100f, "0.00", Order = 0, RequireRestart = false, HintText = genericHintText)]
         public float AthleticsWeightFactorValue { get; set; } = 0.1f;
+
+        [SettingPropertyGroup("Endurance")]
+        [SettingPropertyFloatingInteger("Knock back resistance", 0f, 100f, "0.00", Order = 0, RequireRestart = false, HintText = genericHintText)]
+        public float KnockBackResistanceValue { get; set; } = 0.1f;
+
+        [SettingPropertyGroup("Endurance")]
+        [SettingPropertyFloatingInteger("Knock down resistance", 0f, 100f, "0.00", Order = 0, RequireRestart = false, HintText = genericHintText)]
+        public float KnockDownResistanceValue { get; set; } = 0.1f;
 
         [SettingPropertyGroup("Endurance")]
         [SettingPropertyFloatingInteger("Max difficulty of weapon that can be smithed without penalty", 0f, 100f, "0.00", Order = 0, RequireRestart = false, HintText = genericHintText)]

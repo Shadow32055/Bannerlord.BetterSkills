@@ -40,11 +40,14 @@ namespace BetterSkills.Patches {
 		static FieldRef<DefaultSkillEffects, SkillEffect> _effectHorseLevel = AccessTools.FieldRefAccess<DefaultSkillEffects, SkillEffect>("_effectHorseLevel");
 		static FieldRef<DefaultSkillEffects, SkillEffect> _effectHorseSpeed = AccessTools.FieldRefAccess<DefaultSkillEffects, SkillEffect>("_effectHorseSpeed");
 		static FieldRef<DefaultSkillEffects, SkillEffect> _effectHorseManeuver = AccessTools.FieldRefAccess<DefaultSkillEffects, SkillEffect>("_effectHorseManeuver");
-		static FieldRef<DefaultSkillEffects, SkillEffect> _effectHorseWeaponDamagePenalty = AccessTools.FieldRefAccess<DefaultSkillEffects, SkillEffect>("_effectHorseWeaponDamagePenalty");
-		static FieldRef<DefaultSkillEffects, SkillEffect> _effectHorseWeaponSpeedPenalty = AccessTools.FieldRefAccess<DefaultSkillEffects, SkillEffect>("_effectHorseWeaponSpeedPenalty");
-		static FieldRef<DefaultSkillEffects, SkillEffect> _effectAthleticsSpeedFactor = AccessTools.FieldRefAccess<DefaultSkillEffects, SkillEffect>("_effectAthleticsSpeedFactor");
+		static FieldRef<DefaultSkillEffects, SkillEffect> _effectMountedWeaponDamagePenalty = AccessTools.FieldRefAccess<DefaultSkillEffects, SkillEffect>("_effectMountedWeaponDamagePenalty");
+		static FieldRef<DefaultSkillEffects, SkillEffect> _effectMountedWeaponSpeedPenalty = AccessTools.FieldRefAccess<DefaultSkillEffects, SkillEffect>("_effectMountedWeaponSpeedPenalty");
+        static FieldRef<DefaultSkillEffects, SkillEffect> _effectDismountResistance = AccessTools.FieldRefAccess<DefaultSkillEffects, SkillEffect>("_effectDismountResistance");
+        static FieldRef<DefaultSkillEffects, SkillEffect> _effectAthleticsSpeedFactor = AccessTools.FieldRefAccess<DefaultSkillEffects, SkillEffect>("_effectAthleticsSpeedFactor");
 		static FieldRef<DefaultSkillEffects, SkillEffect> _effectAthleticsWeightFactor = AccessTools.FieldRefAccess<DefaultSkillEffects, SkillEffect>("_effectAthleticsWeightFactor");
-		static FieldRef<DefaultSkillEffects, SkillEffect> _effectSmithingLevel = AccessTools.FieldRefAccess<DefaultSkillEffects, SkillEffect>("_effectSmithingLevel");
+		static FieldRef<DefaultSkillEffects, SkillEffect> _effectKnockBackResistance = AccessTools.FieldRefAccess<DefaultSkillEffects, SkillEffect>("_effectKnockBackResistance");
+        static FieldRef<DefaultSkillEffects, SkillEffect> _effectKnockDownResistance = AccessTools.FieldRefAccess<DefaultSkillEffects, SkillEffect>("_effectKnockDownResistance");
+        static FieldRef<DefaultSkillEffects, SkillEffect> _effectSmithingLevel = AccessTools.FieldRefAccess<DefaultSkillEffects, SkillEffect>("_effectSmithingLevel");
 
 		static FieldRef<DefaultSkillEffects, SkillEffect> _effectTacticsAdvantage = AccessTools.FieldRefAccess<DefaultSkillEffects, SkillEffect>("_effectTacticsAdvantage");
 		static FieldRef<DefaultSkillEffects, SkillEffect> _effectTacticsTroopSacrificeReduction = AccessTools.FieldRefAccess<DefaultSkillEffects, SkillEffect>("_effectTacticsTroopSacrificeReduction");
@@ -147,15 +150,19 @@ namespace BetterSkills.Patches {
 			{
 				DefaultSkills.Riding
 			}, SkillEffect.PerkRole.Personal, Helper.settings.HorseManeuverValue, SkillEffect.PerkRole.None, 0f, SkillEffect.EffectIncrementType.AddFactor, 0f, 0f);
-			_effectHorseWeaponDamagePenalty(__instance).Initialize(new TextObject("{=0dbwEczK}Mounted weapon damage penalty: {a0} %", null), new SkillObject[]
+            _effectMountedWeaponDamagePenalty(__instance).Initialize(new TextObject("{=0dbwEczK}Mounted weapon damage penalty: {a0} %", null), new SkillObject[]
 			{
 				DefaultSkills.Riding
-			}, SkillEffect.PerkRole.Personal, Helper.settings.HorseWeaponDamagePenaltyValue, SkillEffect.PerkRole.None, 0f, SkillEffect.EffectIncrementType.Add, 20f, 0f);
-			_effectHorseWeaponSpeedPenalty(__instance).Initialize(new TextObject("{=oE5etyy0}Mounted weapon speed & reload penalty: {a0} %", null), new SkillObject[]
+			}, SkillEffect.PerkRole.Personal, Helper.settings.MountWeaponDamagePenaltyValue, SkillEffect.PerkRole.None, 0f, SkillEffect.EffectIncrementType.Add, 20f, 0f);
+            _effectMountedWeaponSpeedPenalty(__instance).Initialize(new TextObject("{=oE5etyy0}Mounted weapon speed & reload penalty: {a0} %", null), new SkillObject[]
 			{
 				DefaultSkills.Riding
-			}, SkillEffect.PerkRole.Personal, Helper.settings.HorseWeaponSpeedPenaltyValue, SkillEffect.PerkRole.None, 0f, SkillEffect.EffectIncrementType.Add, 20f, 0f);
-			_effectAthleticsSpeedFactor(__instance).Initialize(new TextObject("{=rgb6vdon}Running speed increased by {a0} %", null), new SkillObject[]
+			}, SkillEffect.PerkRole.Personal, Helper.settings.MountWeaponSpeedPenaltyValue, SkillEffect.PerkRole.None, 0f, SkillEffect.EffectIncrementType.Add, 30f, 0f);
+            _effectDismountResistance(__instance).Initialize(new TextObject("{= kbHJVxAo }Dismount resistance: { a0}% of max. hitpoints", null), new SkillObject[]
+           {
+                DefaultSkills.Riding
+           }, SkillEffect.PerkRole.Personal, Helper.settings.DismountResistanceValue, SkillEffect.PerkRole.None, 0f, SkillEffect.EffectIncrementType.Add, 40f, 0f);
+            _effectAthleticsSpeedFactor(__instance).Initialize(new TextObject("{=rgb6vdon}Running speed increased by {a0} %", null), new SkillObject[]
 			{
 				DefaultSkills.Athletics
 			}, SkillEffect.PerkRole.Personal, Helper.settings.AthleticsSpeedFactorValue, SkillEffect.PerkRole.None, 0f, SkillEffect.EffectIncrementType.AddFactor, 0f, 0f);
@@ -163,7 +170,15 @@ namespace BetterSkills.Patches {
 			{
 				DefaultSkills.Athletics
 			}, SkillEffect.PerkRole.Personal, Helper.settings.AthleticsWeightFactorValue, SkillEffect.PerkRole.None, 0f, SkillEffect.EffectIncrementType.AddFactor, 0f, 0f);
-			_effectSmithingLevel(__instance).Initialize(new TextObject("{=ImN8Cfk6}Max difficulty of weapon that can be smithed without penalty: {a0}", null), new SkillObject[]
+            _effectKnockBackResistance(__instance).Initialize(new TextObject("{=TyjDHQUv}Knock back resistance: {a0}% of max. hitpoints", null), new SkillObject[]
+            {
+                DefaultSkills.Athletics
+            }, SkillEffect.PerkRole.Personal, Helper.settings.KnockBackResistanceValue, SkillEffect.PerkRole.None, 0f, SkillEffect.EffectIncrementType.Add, 15f, 0f);
+            _effectKnockDownResistance(__instance).Initialize(new TextObject("{=tlNZIH3l}Knock down resistance: {a0}% of max. hitpoints", null), new SkillObject[]
+            {
+                DefaultSkills.Athletics
+            }, SkillEffect.PerkRole.Personal, Helper.settings.KnockDownResistanceValue, SkillEffect.PerkRole.None, 0f, SkillEffect.EffectIncrementType.Add, 40f, 0f);
+            _effectSmithingLevel(__instance).Initialize(new TextObject("{=ImN8Cfk6}Max difficulty of weapon that can be smithed without penalty: {a0}", null), new SkillObject[]
 			{
 				DefaultSkills.Crafting
 			}, SkillEffect.PerkRole.Personal, Helper.settings.SmithingLevelValue, SkillEffect.PerkRole.None, 0f, SkillEffect.EffectIncrementType.AddFactor, 0f, 0f);

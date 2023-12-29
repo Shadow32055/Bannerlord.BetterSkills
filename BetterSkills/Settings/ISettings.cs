@@ -18,10 +18,13 @@
         float HorseLevelValue { get; set; }
         float HorseSpeedValue { get; set; }
         float HorseManeuverValue { get; set; }
-        float HorseWeaponDamagePenaltyValue { get; set; }
-        float HorseWeaponSpeedPenaltyValue { get; set; }
+        float MountWeaponDamagePenaltyValue { get; set; }
+        float MountWeaponSpeedPenaltyValue { get; set; }
+        float DismountResistanceValue { get; set; }
         float AthleticsSpeedFactorValue { get; set; }
         float AthleticsWeightFactorValue { get; set; }
+        float KnockBackResistanceValue { get; set; }
+        float KnockDownResistanceValue { get; set; }
         float SmithingLevelValue { get; set; }
         float TacticsAdvantageValue { get; set; }
         float TacticsTroopSacrificeReductionValue { get; set; }
