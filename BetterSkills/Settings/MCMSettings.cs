@@ -4,7 +4,7 @@ using MCM.Abstractions.Base.Global;
 
 namespace BetterSkills.Settings {
 
-    internal class MCMSettings : AttributeGlobalSettings<MCMSettings>, ISettings {
+    public class MCMSettings : AttributeGlobalSettings<MCMSettings> {
 
         const string genericHintText = "Increase of value per skill level (value of 1%, means 300% increase at skill level 300 )";
 

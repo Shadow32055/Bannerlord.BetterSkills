@@ -1,15 +1,18 @@
-﻿using HarmonyLib;
-using BetterSkills.Utils;
+﻿using BetterCore.Utils;
 using BetterSkills.Settings;
+using HarmonyLib;
 using TaleWorlds.MountAndBlade;
-using TaleWorlds.Core;
 
 namespace BetterSkills {
-	public class SubModule : MBSubModuleBase {
-
+    public class SubModule : MBSubModuleBase {
+		public static MCMSettings _settings;
 		protected override void OnSubModuleLoad() {
 			base.OnSubModuleLoad();
-		}
+
+            Harmony h = new("Bannerlord.Shadow.BetterSkills");
+
+            h.PatchAll();
+        }
 
 		protected override void OnBeforeInitialModuleScreenSetAsRoot() {
 			base.OnBeforeInitialModuleScreenSetAsRoot();
@@ -17,12 +20,12 @@ namespace BetterSkills {
 			string modName = base.GetType().Assembly.GetName().Name;
 
 			Helper.SetModName(modName);
-			Helper.settings = SettingsManager.Instance;
-		}
 
-		protected override void OnGameStart(Game g, IGameStarter ig) {
-			base.OnGameStart(g, ig);
-			new Harmony("Bannerlord.Shadow.BetterSkills").PatchAll();
-		}
+            if (MCMSettings.Instance is not null) {
+                _settings = MCMSettings.Instance;
+            } else {
+                Logger.SendMessage("Failed to find settings instance!", Severity.High);
+            }
+        }
 	}
 }
