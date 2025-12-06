@@ -182,18 +182,18 @@ namespace BetterSkills.Patches
                     EffectIncrementType.Add);
 
                 _effectMountedWeaponDamagePenalty(__instance).Initialize(
-                    new TextObject("{=0dbwEczK}Mounted weapon damage penalty: {a0}", null),
+                    new TextObject("{=0dbwEczK}Mounted weapon damage penalty: -{a0}%", null),
                     DefaultSkills.Riding,
                     PartyRole.Personal,
                     BetterSkills.Settings.MountWeaponDamagePenaltyValue,
-                    EffectIncrementType.Add);
+                    EffectIncrementType.AddFactor);
 
                 _effectMountedWeaponSpeedPenalty(__instance).Initialize(
-                    new TextObject("{=oE5etyy0}Mounted weapon speed & reload penalty: {a0}", null),
+                    new TextObject("{=oE5etyy0}Mounted weapon speed & reload penalty: -{a0}%", null),
                     DefaultSkills.Riding,
                     PartyRole.Personal,
                     BetterSkills.Settings.MountWeaponSpeedPenaltyValue,
-                    EffectIncrementType.Add);
+                    EffectIncrementType.AddFactor);
 
                 _effectDismountResistance(__instance).Initialize(
                     new TextObject("{=kbHJVxAo}Dismount resistance: {a0} of max. hitpoints", null),
@@ -364,6 +364,4 @@ namespace BetterSkills.Patches
             }
         }
     }
-
 }
-
