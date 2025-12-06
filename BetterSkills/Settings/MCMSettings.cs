@@ -13,95 +13,95 @@ namespace BetterSkills.Settings
 
         // ---------------------- VIGOR SKILLS ---------------------- //
         [SettingPropertyGroup(RefValues.VigorText, GroupOrder = 0)]
-        [SettingPropertyFloatingInteger(RefValues.OneHandedSpeedText, 0f, 5f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
-        public float OneHandedSpeedValue { get; set; } = 0.01f;
+        [SettingPropertyFloatingInteger(RefValues.OneHandedSpeedText, -0.003f, 0.05f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
+        public float OneHandedSpeedValue { get; set; } = 0.003f;
 
         [SettingPropertyGroup(RefValues.VigorText)]
-        [SettingPropertyFloatingInteger(RefValues.OneHandedDamageText, 0f, 5f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
-        public float OneHandedDamageValue { get; set; } = 0.01f;
+        [SettingPropertyFloatingInteger(RefValues.OneHandedDamageText, -0.003f, 0.05f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
+        public float OneHandedDamageValue { get; set; } = 0.003f;
 
         [SettingPropertyGroup(RefValues.VigorText)]
-        [SettingPropertyFloatingInteger(RefValues.TwoHandedSpeedText, 0f, 5f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
-        public float TwoHandedSpeedValue { get; set; } = 0.01f;
+        [SettingPropertyFloatingInteger(RefValues.TwoHandedSpeedText, -0.003f, 0.05f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
+        public float TwoHandedSpeedValue { get; set; } = 0.003f;
 
         [SettingPropertyGroup(RefValues.VigorText)]
-        [SettingPropertyFloatingInteger(RefValues.TwoHandedDamageText, 0f, 5f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
-        public float TwoHandedDamageValue { get; set; } = 0.01f;
+        [SettingPropertyFloatingInteger(RefValues.TwoHandedDamageText, -0.003f, 0.05f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
+        public float TwoHandedDamageValue { get; set; } = 0.003f;
 
         [SettingPropertyGroup(RefValues.VigorText)]
-        [SettingPropertyFloatingInteger(RefValues.PolearmSpeedText, 0f, 5f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
-        public float PolearmSpeedValue { get; set; } = 0.01f;
+        [SettingPropertyFloatingInteger(RefValues.PolearmSpeedText, -0.003f, 0.05f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
+        public float PolearmSpeedValue { get; set; } = 0.003f;
 
         [SettingPropertyGroup(RefValues.VigorText)]
-        [SettingPropertyFloatingInteger(RefValues.PolearmDamageText, 0f, 5f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
-        public float PolearmDamageValue { get; set; } = 0.01f;
+        [SettingPropertyFloatingInteger(RefValues.PolearmDamageText, -0.003f, 0.05f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
+        public float PolearmDamageValue { get; set; } = 0.003f;
 
         // ---------------------- Control SKILLS ---------------------- //
 
         [SettingPropertyGroup(RefValues.ControlText)]
-        [SettingPropertyFloatingInteger(RefValues.BowDmgText, 0f, 5f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
-        public float BowDamageValue { get; set; } = 0.01f;
+        [SettingPropertyFloatingInteger(RefValues.BowDmgText, -0.003f, 0.05f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
+        public float BowDamageValue { get; set; } = 0.003f;
 
         [SettingPropertyGroup(RefValues.ControlText)]
-        [SettingPropertyFloatingInteger(RefValues.BowAccuracyText, 0f, 5f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
-        public float BowAccuracyValue { get; set; } = 0.01f;
+        [SettingPropertyFloatingInteger(RefValues.BowAccuracyText, -0.003f, 0.05f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
+        public float BowAccuracyValue { get; set; } = 0.003f;
 
         [SettingPropertyGroup(RefValues.ControlText)]
-        [SettingPropertyFloatingInteger(RefValues.ThrowingSpeedText, 0f, 5f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
-        public float ThrowingSpeedValue { get; set; } = 0.01f;
+        [SettingPropertyFloatingInteger(RefValues.ThrowingSpeedText, -0.003f, 0.05f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
+        public float ThrowingSpeedValue { get; set; } = 0.003f;
 
         [SettingPropertyGroup(RefValues.ControlText)]
-        [SettingPropertyFloatingInteger(RefValues.ThrowingDamageText, 0f, 5f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
-        public float ThrowingDamageValue { get; set; } = 0.01f;
+        [SettingPropertyFloatingInteger(RefValues.ThrowingDamageText, -0.003f, 0.05f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
+        public float ThrowingDamageValue { get; set; } = 0.003f;
 
         [SettingPropertyGroup(RefValues.ControlText)]
-        [SettingPropertyFloatingInteger(RefValues.ThrowingAccText, 0f, 5f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
-        public float ThrowingAccuracyValue { get; set; } = 0.01f;
+        [SettingPropertyFloatingInteger(RefValues.ThrowingAccText, -0.003f, 0.05f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
+        public float ThrowingAccuracyValue { get; set; } = 0.003f;
 
         [SettingPropertyGroup(RefValues.ControlText)]
-        [SettingPropertyFloatingInteger(RefValues.CrossbowReloadText, 0f, 5f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
-        public float CrossbowReloadSpeedValue { get; set; } = 0.01f;
+        [SettingPropertyFloatingInteger(RefValues.CrossbowReloadText, -0.003f, 0.05f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
+        public float CrossbowReloadSpeedValue { get; set; } = 0.003f;
 
         [SettingPropertyGroup(RefValues.ControlText)]
-        [SettingPropertyFloatingInteger(RefValues.CrossbowAccText, 0f, 5f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
-        public float CrossbowAccuracyValue { get; set; } = 0.01f;
+        [SettingPropertyFloatingInteger(RefValues.CrossbowAccText, -0.003f, 0.05f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
+        public float CrossbowAccuracyValue { get; set; } = 0.003f;
 
         // ---------------------- Endurance SKILLS ---------------------- //
 
         [SettingPropertyGroup(RefValues.EnduranceText)]
-        [SettingPropertyFloatingInteger(RefValues.HorseSpeedText, 0f, 5f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
+        [SettingPropertyFloatingInteger(RefValues.HorseSpeedText, -5f, 5f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
         public float HorseSpeedValue { get; set; } = 0.05f;
 
         [SettingPropertyGroup(RefValues.EnduranceText)]
-        [SettingPropertyFloatingInteger(RefValues.HorseManeuverText, 0f, 5f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
-        public float HorseManeuverValue { get; set; } = 0.01f;
+        [SettingPropertyFloatingInteger(RefValues.HorseManeuverText, -5f, 5f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
+        public float HorseManeuverValue { get; set; } = 0.003f;
 
         [SettingPropertyGroup(RefValues.EnduranceText)]
-        [SettingPropertyFloatingInteger(RefValues.MountWepDmgPenText, -5f, 0f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
+        [SettingPropertyFloatingInteger(RefValues.MountWepDmgPenText, -5f, 5f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
         public float MountWeaponDamagePenaltyValue { get; set; } = -0.05f;
 
         [SettingPropertyGroup(RefValues.EnduranceText)]
-        [SettingPropertyFloatingInteger(RefValues.MountWepSpeedPenText, -5f, 0f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
+        [SettingPropertyFloatingInteger(RefValues.MountWepSpeedPenText, -5f, 5f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
         public float MountWeaponSpeedPenaltyValue { get; set; } = -0.05f;
 
         [SettingPropertyGroup(RefValues.EnduranceText)]
-        [SettingPropertyFloatingInteger(RefValues.DismountResText, 0f, 5f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
+        [SettingPropertyFloatingInteger(RefValues.DismountResText, -5f, 5f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
         public float DismountResistanceValue { get; set; } = 0.02f;
 
         [SettingPropertyGroup(RefValues.EnduranceText)]
-        [SettingPropertyFloatingInteger(RefValues.AthleticsSpeedText, 0f, 5f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
-        public float AthleticsSpeedFactorValue { get; set; } = 0.01f;
+        [SettingPropertyFloatingInteger(RefValues.AthleticsSpeedText, -0.003f, 0.05f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
+        public float AthleticsSpeedFactorValue { get; set; } = 0.003f;
 
         [SettingPropertyGroup(RefValues.EnduranceText)]
-        [SettingPropertyFloatingInteger(RefValues.AthleticsWeigthText, 0f, 5f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
-        public float AthleticsWeightFactorValue { get; set; } = 0.01f;
+        [SettingPropertyFloatingInteger(RefValues.AthleticsWeigthText, -0.003f, 0.05f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
+        public float AthleticsWeightFactorValue { get; set; } = 0.003f;
 
         [SettingPropertyGroup(RefValues.EnduranceText)]
-        [SettingPropertyFloatingInteger(RefValues.KnockbackResText, 0f, 5f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
+        [SettingPropertyFloatingInteger(RefValues.KnockbackResText, -0.003f, 0.05f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
         public float KnockBackResistanceValue { get; set; } = 0.02f;
 
         [SettingPropertyGroup(RefValues.EnduranceText)]
-        [SettingPropertyFloatingInteger(RefValues.KnockdownResText, 0f, 5f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
+        [SettingPropertyFloatingInteger(RefValues.KnockdownResText, -0.003f, 0.05f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
         public float KnockDownResistanceValue { get; set; } = 0.02f;
 
         [SettingPropertyGroup(RefValues.EnduranceText)]
@@ -111,75 +111,75 @@ namespace BetterSkills.Settings
         // ---------------------- Cunning SKILLS ---------------------- //
 
         [SettingPropertyGroup(RefValues.CunningText, GroupOrder = 3)]
-        [SettingPropertyFloatingInteger(RefValues.TacticsAdvText, 0f, 5f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
-        public float TacticsAdvantageValue { get; set; } = 0.01f;
+        [SettingPropertyFloatingInteger(RefValues.TacticsAdvText, -0.003f, 0.05f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
+        public float TacticsAdvantageValue { get; set; } = 0.003f;
 
         [SettingPropertyGroup(RefValues.CunningText)]
-        [SettingPropertyFloatingInteger(RefValues.TacticsSacrificeRedText, 0f, 5f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
-        public float TacticsTroopSacrificeReductionValue { get; set; } = 0.01f;
+        [SettingPropertyFloatingInteger(RefValues.TacticsSacrificeRedText, -0.003f, 0.05f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
+        public float TacticsTroopSacrificeReductionValue { get; set; } = 0.003f;
 
         [SettingPropertyGroup(RefValues.CunningText)]
-        [SettingPropertyFloatingInteger(RefValues.TrackingText, 0f, 5f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
+        [SettingPropertyFloatingInteger(RefValues.TrackingText, -5f, 5f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
         public float TrackingRadiusValue { get; set; } = 0.02f;
 
         [SettingPropertyGroup(RefValues.CunningText)]
-        [SettingPropertyFloatingInteger(RefValues.TrackingSpotText, 0f, 5f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
+        [SettingPropertyFloatingInteger(RefValues.TrackingSpotText, -5f, 5f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
         public float TrackingSpottingDistanceValue { get; set; } = 0.02f;
 
         [SettingPropertyGroup(RefValues.CunningText)]
-        [SettingPropertyFloatingInteger(RefValues.TrackingInfoText, 0f, 5f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
-        public float TrackingTrackInformationValue { get; set; } = 0.01f;
+        [SettingPropertyFloatingInteger(RefValues.TrackingInfoText, -5f, 5f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
+        public float TrackingTrackInformationValue { get; set; } = 0.003f;
 
         [SettingPropertyGroup(RefValues.CunningText)]
-        [SettingPropertyFloatingInteger(RefValues.LootBonusText, 0f, 5f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
+        [SettingPropertyFloatingInteger(RefValues.LootBonusText, -0.003f, 0.05f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
         public float RogueryLootBonusValue { get; set; } = 0.02f;
 
         // ---------------------- Social SKILLS ---------------------- //
 
         [SettingPropertyGroup(RefValues.SocialText, GroupOrder = 4)]
-        [SettingPropertyFloatingInteger(RefValues.CharmRelText, 0f, 5f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
+        [SettingPropertyFloatingInteger(RefValues.CharmRelText, -0.003f, 0.05f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
         public float CharmRelationBonusValue { get; set; } = 0.02f;
 
         [SettingPropertyGroup(RefValues.SocialText)]
-        [SettingPropertyFloatingInteger(RefValues.TradePenText, 0f, 5f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
-        public float TradePenaltyReductionValue { get; set; } = 0.01f;
+        [SettingPropertyFloatingInteger(RefValues.TradePenText, -0.003f, 0.05f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
+        public float TradePenaltyReductionValue { get; set; } = 0.003f;
 
         [SettingPropertyGroup(RefValues.SocialText)]
-        [SettingPropertyFloatingInteger(RefValues.LeaderMoralText, 0f, 5f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
+        [SettingPropertyFloatingInteger(RefValues.LeaderMoralText, -5f, 5f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
         public float LeadershipMoraleBonusValue { get; set; } = 0.2f;
 
         [SettingPropertyGroup(RefValues.SocialText)]
-        [SettingPropertyFloatingInteger(RefValues.LeaderGarrisonText, 0f, 5f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
+        [SettingPropertyFloatingInteger(RefValues.LeaderGarrisonText, -5f, 5f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
         public float LeadershipGarrisonSizeBonusValue { get; set; } = 0.2f;
 
         // ---------------------- Intelligence SKILLS ---------------------- //
 
         [SettingPropertyGroup(RefValues.IntelligenceText, GroupOrder = 5)]
-        [SettingPropertyFloatingInteger(RefValues.SurviorText, 0f, 5f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
-        public float SurgeonSurvivalBonusValue { get; set; } = 0.01f;
+        [SettingPropertyFloatingInteger(RefValues.SurviorText, -5f, 5f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
+        public float SurgeonSurvivalBonusValue { get; set; } = 0.003f;
 
         [SettingPropertyGroup(RefValues.IntelligenceText)]
-        [SettingPropertyFloatingInteger(RefValues.HealingHeroesText, 0f, 5f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
+        [SettingPropertyFloatingInteger(RefValues.HealingHeroesText, -0.003f, 0.05f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
         public float HealingRateBonusForHeroesValue { get; set; } = 0.02f;
 
         [SettingPropertyGroup(RefValues.IntelligenceText)]
-        [SettingPropertyFloatingInteger(RefValues.HealingRegularsText, 0f, 5f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
+        [SettingPropertyFloatingInteger(RefValues.HealingRegularsText, -0.003f, 0.05f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
         public float HealingRateBonusForRegularsValue { get; set; } = 0.02f;
 
         [SettingPropertyGroup(RefValues.IntelligenceText)]
-        [SettingPropertyFloatingInteger(RefValues.HealingRateText, 0f, 5f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
-        public float GovernorHealingRateBonusValue { get; set; } = 0.01f;
+        [SettingPropertyFloatingInteger(RefValues.HealingRateText, -0.003f, 0.05f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
+        public float GovernorHealingRateBonusValue { get; set; } = 0.003f;
 
         [SettingPropertyGroup(RefValues.IntelligenceText)]
-        [SettingPropertyFloatingInteger(RefValues.SiegeEngineText, 0f, 5f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
-        public float SiegeEngineProductionBonusValue { get; set; } = 0.01f;
+        [SettingPropertyFloatingInteger(RefValues.SiegeEngineText, -0.003f, 0.05f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
+        public float SiegeEngineProductionBonusValue { get; set; } = 0.003f;
 
         [SettingPropertyGroup(RefValues.IntelligenceText)]
-        [SettingPropertyFloatingInteger(RefValues.TownProjectText, 0f, 5f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
+        [SettingPropertyFloatingInteger(RefValues.TownProjectText, -0.003f, 0.05f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
         public float TownProjectBuildingBonusValue { get; set; } = 0.02f;
 
         [SettingPropertyGroup(RefValues.IntelligenceText)]
-        [SettingPropertyFloatingInteger(RefValues.PartySizeText, 0f, 5f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
+        [SettingPropertyFloatingInteger(RefValues.PartySizeText, -5f, 5f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
         public float StewardPartySizeBonusValue { get; set; } = 0.05f;
 
 
@@ -197,79 +197,6 @@ namespace BetterSkills.Settings
                 yield return preset;
 
             // ---- Custom Presets ----
-
-            // 1) Arcade Preset
-            yield return new MemorySettingsPreset(
-                Id,
-                "arcade",
-                "Arcade",
-                () =>
-                {
-                    var s = (MCMSettings)CreateNew();
-
-                    // ---------------------- VIGOR ---------------------- //
-                    s.OneHandedSpeedValue = 0.20f;
-                    s.OneHandedDamageValue = 0.25f;
-
-                    s.TwoHandedSpeedValue = 0.20f;
-                    s.TwoHandedDamageValue = 0.25f;
-
-                    s.PolearmSpeedValue = 0.20f;
-                    s.PolearmDamageValue = 0.25f;
-
-                    // ---------------------- CONTROL ---------------------- //
-                    s.BowDamageValue = 0.20f;             // factor
-                    s.BowAccuracyValue = 0.20f;           // factor
-
-                    s.ThrowingSpeedValue = 0.20f;
-                    s.ThrowingDamageValue = 0.25f;
-                    s.ThrowingAccuracyValue = 0.20f;
-
-                    s.CrossbowReloadSpeedValue = 0.25f;
-                    s.CrossbowAccuracyValue = 0.20f;
-
-                    // ---------------------- ENDURANCE ---------------------- //
-                    s.HorseSpeedValue = 0.50f;            // additive
-                    s.HorseManeuverValue = 0.20f;         // additive
-
-                    s.MountWeaponDamagePenaltyValue = -0.00f; // remove penalties completely
-                    s.MountWeaponSpeedPenaltyValue = -0.00f;
-
-                    s.DismountResistanceValue = 0.50f;    // additive
-
-                    s.AthleticsSpeedFactorValue = 0.25f;  // factor
-                    s.AthleticsWeightFactorValue = 0.20f; // factor
-                    s.KnockBackResistanceValue = 0.50f;   // factor
-                    s.KnockDownResistanceValue = 0.50f;   // factor
-
-                    s.SmithingLevelValue = 5f;            // additive
-
-                    // ---------------------- CUNNING ---------------------- //
-                    s.TacticsAdvantageValue = 0.25f;           // factor
-                    s.TacticsTroopSacrificeReductionValue = 0.25f;
-                    s.TrackingRadiusValue = 0.20f;
-                    s.TrackingSpottingDistanceValue = 0.20f;
-                    s.TrackingTrackInformationValue = 0.10f;
-                    s.RogueryLootBonusValue = 0.25f;           // factor
-
-                    // ---------------------- SOCIAL ---------------------- //
-                    s.CharmRelationBonusValue = 0.25f;         // factor
-                    s.TradePenaltyReductionValue = 0.20f;      // factor
-                    s.LeadershipMoraleBonusValue = 2f;         // additive
-                    s.LeadershipGarrisonSizeBonusValue = 2f;   // additive
-
-                    // ---------------------- INTELLIGENCE ---------------------- //
-                    s.SurgeonSurvivalBonusValue = 0.20f;          // additive
-                    s.HealingRateBonusForHeroesValue = 0.25f;     // factor
-                    s.HealingRateBonusForRegularsValue = 0.25f;   // factor
-                    s.GovernorHealingRateBonusValue = 0.20f;
-                    s.SiegeEngineProductionBonusValue = 0.25f;     // factor
-                    s.TownProjectBuildingBonusValue = 0.25f;       // factor
-                    s.StewardPartySizeBonusValue = 0.50f;          // additive
-
-                    return s;
-                }
-            );
 
             // 1) Vanilla Preset
             yield return new MemorySettingsPreset(
@@ -330,6 +257,167 @@ namespace BetterSkills.Settings
                     return s;
                 }
             );
+
+            // 2) Arcade Preset
+            yield return new MemorySettingsPreset(
+                Id,
+                "arcade",
+                "Arcade",
+                () =>
+                {
+                    var s = (MCMSettings)CreateNew();
+
+                    // ---------------------- VIGOR ---------------------- //
+                    s.OneHandedSpeedValue = 0.006f;
+                    s.OneHandedDamageValue = 0.006f;
+
+                    s.TwoHandedSpeedValue = 0.006f;
+                    s.TwoHandedDamageValue = 0.006f;
+
+                    s.PolearmSpeedValue = 0.006f;
+                    s.PolearmDamageValue = 0.006f;
+
+                    // ---------------------- CONTROL ---------------------- //
+                    s.BowDamageValue = 0.006f;
+                    s.BowAccuracyValue = 0.006f;
+
+                    s.ThrowingSpeedValue = 0.006f;
+                    s.ThrowingDamageValue = 0.006f;
+                    s.ThrowingAccuracyValue = 0.006f;
+
+                    s.CrossbowReloadSpeedValue = 0.006f;
+                    s.CrossbowAccuracyValue = 0.006f;
+
+                    // ---------------------- ENDURANCE ---------------------- //
+                    s.HorseSpeedValue = 0.10f;           // default 0.05
+                    s.HorseManeuverValue = 0.006f;       // default 0.003
+
+                    s.MountWeaponDamagePenaltyValue = -0.10f; // default -0.05
+                    s.MountWeaponSpeedPenaltyValue = -0.10f;
+
+                    s.DismountResistanceValue = 0.04f;   // default 0.02
+
+                    s.AthleticsSpeedFactorValue = 0.006f;
+                    s.AthleticsWeightFactorValue = 0.006f;
+
+                    s.KnockBackResistanceValue = 0.04f;  // default 0.02
+                    s.KnockDownResistanceValue = 0.04f;  // default 0.02
+
+                    s.SmithingLevelValue = 1.0f;         // default 0.5
+
+                    // ---------------------- CUNNING ---------------------- //
+                    s.TacticsAdvantageValue = 0.006f;
+                    s.TacticsTroopSacrificeReductionValue = 0.006f;
+
+                    s.TrackingRadiusValue = 0.04f;       // default 0.02
+                    s.TrackingSpottingDistanceValue = 0.04f;
+                    s.TrackingTrackInformationValue = 0.006f;
+
+                    s.RogueryLootBonusValue = 0.04f;     // default 0.02
+
+                    // ---------------------- SOCIAL ---------------------- //
+                    s.CharmRelationBonusValue = 0.04f;   // default 0.02
+                    s.TradePenaltyReductionValue = 0.006f;
+
+                    s.LeadershipMoraleBonusValue = 0.4f; // default 0.2
+                    s.LeadershipGarrisonSizeBonusValue = 0.4f;
+
+                    // ---------------------- INTELLIGENCE ---------------------- //
+                    s.SurgeonSurvivalBonusValue = 0.006f;
+
+                    s.HealingRateBonusForHeroesValue = 0.04f;    // default 0.02
+                    s.HealingRateBonusForRegularsValue = 0.04f;  // default 0.02
+                    s.GovernorHealingRateBonusValue = 0.006f;
+
+                    s.SiegeEngineProductionBonusValue = 0.006f;
+                    s.TownProjectBuildingBonusValue = 0.04f;     // default 0.02
+
+                    s.StewardPartySizeBonusValue = 0.10f;        // default 0.05
+
+                    return s;
+                }
+            );
+
+            // 3) My joints hurt
+            yield return new MemorySettingsPreset(
+                Id,
+                "senior",
+                "My joints hurt",
+                () =>
+                {
+                    var s = (MCMSettings)CreateNew();
+
+                    // ---------------------- VIGOR (slow weak attacks) ---------------------- //
+                    s.OneHandedSpeedValue = -0.003f;
+                    s.OneHandedDamageValue = -0.003f;
+
+                    s.TwoHandedSpeedValue = -0.003f;
+                    s.TwoHandedDamageValue = -0.003f;
+
+                    s.PolearmSpeedValue = -0.003f;
+                    s.PolearmDamageValue = -0.003f;
+
+                    // ---------------------- CONTROL (sand in the eyes) ---------------------- //
+                    s.BowDamageValue = -0.003f;
+                    s.BowAccuracyValue = -0.003f;
+
+                    s.ThrowingSpeedValue = -0.003f;
+                    s.ThrowingDamageValue = -0.003f;
+                    s.ThrowingAccuracyValue = -0.003f;
+
+                    s.CrossbowReloadSpeedValue = -0.003f;
+                    s.CrossbowAccuracyValue = -0.003f;
+
+                    // ---------------------- ENDURANCE (slooooow bodies) ---------------------- //
+                    s.HorseSpeedValue = -0.003f;         // horses exhausted
+                    s.HorseManeuverValue = -0.003f;
+
+                    s.MountWeaponDamagePenaltyValue = 0.02f; // makes mounted worse
+                    s.MountWeaponSpeedPenaltyValue = 0.02f;
+
+                    s.DismountResistanceValue = -0.01f; // easier to knock off
+
+                    s.AthleticsSpeedFactorValue = -0.001f;   // walking through molasses
+                    s.AthleticsWeightFactorValue = -0.001f;  // armor feels heavier
+
+                    s.KnockBackResistanceValue = -0.01f;
+                    s.KnockDownResistanceValue = -0.01f;
+
+                    s.SmithingLevelValue = 0.2f;  // old craftsmen still know some tricks
+
+                    // ---------------------- CUNNING (fading senses) ---------------------- //
+                    s.TacticsAdvantageValue = -0.002f;
+                    s.TacticsTroopSacrificeReductionValue = -0.001f;
+
+                    s.TrackingRadiusValue = -0.01f;
+                    s.TrackingSpottingDistanceValue = -0.01f;
+                    s.TrackingTrackInformationValue = -0.002f;
+
+                    s.RogueryLootBonusValue = -0.01f;
+
+                    // ---------------------- SOCIAL (wise elders) ---------------------- //
+                    s.CharmRelationBonusValue = 0.04f;  // Elders respected
+                    s.TradePenaltyReductionValue = 0.01f;
+
+                    s.LeadershipMoraleBonusValue = 0.1f; // seasoned veterans
+                    s.LeadershipGarrisonSizeBonusValue = 0.1f;
+
+                    // ---------------------- INTELLIGENCE (old = wise & tough) ---------------------- //
+                    s.SurgeonSurvivalBonusValue = 0.01f;
+
+                    s.HealingRateBonusForHeroesValue = 0.01f;
+                    s.HealingRateBonusForRegularsValue = 0.01f;
+
+                    s.GovernorHealingRateBonusValue = 0.01f;
+
+                    s.SiegeEngineProductionBonusValue = -0.002f; // weak backs
+                    s.TownProjectBuildingBonusValue = -0.01f;
+
+                    s.StewardPartySizeBonusValue = -0.02f; // fewer helpers
+
+                    return s;
+                }
+        );
         }
     }
 }

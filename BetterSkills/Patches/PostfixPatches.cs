@@ -74,7 +74,6 @@ namespace BetterSkills.Patches
         [HarmonyPatch(typeof(DefaultSkillEffects), "InitializeAll")]
         public static void InitializeAll(DefaultSkillEffects __instance)
         {
-            NotifyHelper.WriteError(nameof(DefaultSkillEffects), "writing to skills");
             try
             {
                 _effectOneHandedSpeed(__instance).Initialize(
@@ -357,6 +356,7 @@ namespace BetterSkills.Patches
                     BetterSkills.Settings.StewardPartySizeBonusValue,
                     EffectIncrementType.Add);
 
+                NotifyHelper.WriteMessage($"{nameof(DefaultSkillEffects)} Initialize skills", MsgType.Notify);
             }
             catch (Exception e)
             {
