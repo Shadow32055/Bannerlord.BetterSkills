@@ -5,11 +5,9 @@ using MCM.Abstractions.Attributes.v2;
 using MCM.Abstractions.Base.Global;
 using System.Collections.Generic;
 
-namespace BetterSkills.Settings
-{
+namespace BetterSkills.Settings {
 
-    public class MCMSettings : AttributeGlobalSettings<MCMSettings>
-    {
+    public class MCMSettings : AttributeGlobalSettings<MCMSettings> {
 
         // ---------------------- VIGOR SKILLS ---------------------- //
         [SettingPropertyGroup(RefValues.VigorText, GroupOrder = 0)]
@@ -190,8 +188,7 @@ namespace BetterSkills.Settings
         public bool LoadMCMConfigFile { get; set; } = true;
 
 
-        public override IEnumerable<ISettingsPreset> GetBuiltInPresets()
-        {
+        public override IEnumerable<ISettingsPreset> GetBuiltInPresets() {
             // Keep the default preset from BaseSettings
             foreach (var preset in base.GetBuiltInPresets())
                 yield return preset;
@@ -203,8 +200,7 @@ namespace BetterSkills.Settings
                 Id,
                 "vanilla",
                 "Vanilla (No Bonuses)",
-                () =>
-                {
+                () => {
                     var s = (MCMSettings)CreateNew();
 
                     // everything zero -> behaves like unmodded Bannerlord
@@ -264,8 +260,7 @@ namespace BetterSkills.Settings
                 Id,
                 "arcade",
                 "Arcade",
-                () =>
-                {
+                () => {
                     var s = (MCMSettings)CreateNew();
 
                     // ---------------------- VIGOR ---------------------- //
@@ -345,8 +340,7 @@ namespace BetterSkills.Settings
                 Id,
                 "senior",
                 "My joints hurt",
-                () =>
-                {
+                () => {
                     var s = (MCMSettings)CreateNew();
 
                     // ---------------------- VIGOR (slow weak attacks) ---------------------- //

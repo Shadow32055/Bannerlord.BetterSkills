@@ -6,12 +6,10 @@ using TaleWorlds.Core;
 using TaleWorlds.Localization;
 using static HarmonyLib.AccessTools;
 
-namespace BetterSkills.Patches
-{
+namespace BetterSkills.Patches {
 
     [HarmonyPatch]
-    class PostfixPatches
-    {
+    class PostfixPatches {
 
         /*
 		[HarmonyPrefix]
@@ -21,7 +19,6 @@ namespace BetterSkills.Patches
 
 			return false;
 		}*/
-
 
         static FieldRef<DefaultSkillEffects, SkillEffect> _effectOneHandedSpeed = AccessTools.FieldRefAccess<DefaultSkillEffects, SkillEffect>("_effectOneHandedSpeed");
         static FieldRef<DefaultSkillEffects, SkillEffect> _effectOneHandedDamage = AccessTools.FieldRefAccess<DefaultSkillEffects, SkillEffect>("_effectOneHandedDamage");
@@ -72,10 +69,8 @@ namespace BetterSkills.Patches
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(DefaultSkillEffects), "InitializeAll")]
-        public static void InitializeAll(DefaultSkillEffects __instance)
-        {
-            try
-            {
+        public static void InitializeAll(DefaultSkillEffects __instance) {
+            try {
                 _effectOneHandedSpeed(__instance).Initialize(
                         new TextObject("{=hjxRvb9l}One handed weapon speed: +{a0}%", null),
                         DefaultSkills.OneHanded,
@@ -357,9 +352,7 @@ namespace BetterSkills.Patches
                     EffectIncrementType.Add);
 
                 NotifyHelper.WriteMessage($"{nameof(DefaultSkillEffects)} Initialize skills", MsgType.Notify);
-            }
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 NotifyHelper.WriteError(nameof(DefaultSkillEffects), $"writing to skills failed: {e}");
             }
         }
