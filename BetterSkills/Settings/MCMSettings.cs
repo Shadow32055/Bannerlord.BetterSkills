@@ -11,7 +11,6 @@ namespace BetterSkills.Settings
     public class MCMSettings : AttributeGlobalSettings<MCMSettings>
     {
 
-
         // ---------------------- VIGOR SKILLS ---------------------- //
         [SettingPropertyGroup(RefValues.VigorText, GroupOrder = 0)]
         [SettingPropertyFloatingInteger(RefValues.OneHandedSpeedText, 0f, 5f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
@@ -38,10 +37,6 @@ namespace BetterSkills.Settings
         public float PolearmDamageValue { get; set; } = 0.01f;
 
         // ---------------------- Control SKILLS ---------------------- //
-
-        [SettingPropertyGroup(RefValues.ControlText, GroupOrder = 1)]
-        [SettingPropertyFloatingInteger(RefValues.BowLevelText, 0f, 100f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
-        public float BowLevelValue { get; set; } = 0.5f;
 
         [SettingPropertyGroup(RefValues.ControlText)]
         [SettingPropertyFloatingInteger(RefValues.BowDmgText, 0f, 5f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
@@ -72,10 +67,6 @@ namespace BetterSkills.Settings
         public float CrossbowAccuracyValue { get; set; } = 0.01f;
 
         // ---------------------- Endurance SKILLS ---------------------- //
-
-        [SettingPropertyGroup(RefValues.EnduranceText, GroupOrder = 2)]
-        [SettingPropertyFloatingInteger(RefValues.HorseLevelText, 0f, 5f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
-        public float HorseLevelValue { get; set; } = 0.5f;
 
         [SettingPropertyGroup(RefValues.EnduranceText)]
         [SettingPropertyFloatingInteger(RefValues.HorseSpeedText, 0f, 5f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
@@ -130,10 +121,6 @@ namespace BetterSkills.Settings
         [SettingPropertyGroup(RefValues.CunningText)]
         [SettingPropertyFloatingInteger(RefValues.TrackingText, 0f, 5f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
         public float TrackingRadiusValue { get; set; } = 0.02f;
-
-        [SettingPropertyGroup(RefValues.CunningText)]
-        [SettingPropertyFloatingInteger(RefValues.TrackingLevel, 0f, 100f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
-        public float TrackingLevelValue { get; set; } = 0.5f;
 
         [SettingPropertyGroup(RefValues.CunningText)]
         [SettingPropertyFloatingInteger(RefValues.TrackingSpotText, 0f, 5f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
@@ -195,11 +182,6 @@ namespace BetterSkills.Settings
         [SettingPropertyFloatingInteger(RefValues.PartySizeText, 0f, 5f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
         public float StewardPartySizeBonusValue { get; set; } = 0.05f;
 
-        [SettingPropertyGroup(RefValues.IntelligenceText)]
-        [SettingPropertyFloatingInteger(RefValues.EngineerText, 0f, 100f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
-        public float EngineerLevelValue { get; set; } = 0.5f;
-
-
 
         public override string Id { get { return base.GetType().Assembly.GetName().Name; } }
         public override string DisplayName { get { return base.GetType().Assembly.GetName().Name; } }
@@ -236,7 +218,6 @@ namespace BetterSkills.Settings
                     s.PolearmDamageValue = 0.25f;
 
                     // ---------------------- CONTROL ---------------------- //
-                    s.BowLevelValue = 5f;                 // additive
                     s.BowDamageValue = 0.20f;             // factor
                     s.BowAccuracyValue = 0.20f;           // factor
 
@@ -248,7 +229,6 @@ namespace BetterSkills.Settings
                     s.CrossbowAccuracyValue = 0.20f;
 
                     // ---------------------- ENDURANCE ---------------------- //
-                    s.HorseLevelValue = 3f;               // additive
                     s.HorseSpeedValue = 0.50f;            // additive
                     s.HorseManeuverValue = 0.20f;         // additive
 
@@ -268,7 +248,6 @@ namespace BetterSkills.Settings
                     s.TacticsAdvantageValue = 0.25f;           // factor
                     s.TacticsTroopSacrificeReductionValue = 0.25f;
                     s.TrackingRadiusValue = 0.20f;
-                    s.TrackingLevelValue = 5f;                 // additive
                     s.TrackingSpottingDistanceValue = 0.20f;
                     s.TrackingTrackInformationValue = 0.10f;
                     s.RogueryLootBonusValue = 0.25f;           // factor
@@ -287,7 +266,6 @@ namespace BetterSkills.Settings
                     s.SiegeEngineProductionBonusValue = 0.25f;     // factor
                     s.TownProjectBuildingBonusValue = 0.25f;       // factor
                     s.StewardPartySizeBonusValue = 0.50f;          // additive
-                    s.EngineerLevelValue = 5f;                     // additive
 
                     return s;
                 }
@@ -310,7 +288,6 @@ namespace BetterSkills.Settings
                     s.PolearmSpeedValue = 0f;
                     s.PolearmDamageValue = 0f;
 
-                    s.BowLevelValue = 0f;
                     s.BowDamageValue = 0f;
                     s.BowAccuracyValue = 0f;
                     s.ThrowingSpeedValue = 0f;
@@ -319,7 +296,6 @@ namespace BetterSkills.Settings
                     s.CrossbowReloadSpeedValue = 0f;
                     s.CrossbowAccuracyValue = 0f;
 
-                    s.HorseLevelValue = 0f;
                     s.HorseSpeedValue = 0f;
                     s.HorseManeuverValue = 0f;
                     s.MountWeaponDamagePenaltyValue = 0f;
@@ -334,7 +310,6 @@ namespace BetterSkills.Settings
                     s.TacticsAdvantageValue = 0f;
                     s.TacticsTroopSacrificeReductionValue = 0f;
                     s.TrackingRadiusValue = 0f;
-                    s.TrackingLevelValue = 0f;
                     s.TrackingSpottingDistanceValue = 0f;
                     s.TrackingTrackInformationValue = 0f;
                     s.RogueryLootBonusValue = 0f;
@@ -351,7 +326,6 @@ namespace BetterSkills.Settings
                     s.SiegeEngineProductionBonusValue = 0f;
                     s.TownProjectBuildingBonusValue = 0f;
                     s.StewardPartySizeBonusValue = 0f;
-                    s.EngineerLevelValue = 0f;
 
                     return s;
                 }
