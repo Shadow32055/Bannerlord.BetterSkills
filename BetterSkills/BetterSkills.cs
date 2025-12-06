@@ -42,7 +42,11 @@ namespace BetterSkills {
 
                 Settings = MCMSettings.Instance ?? throw new NullReferenceException("Settings are null");
 
-                NotifyHelper.WriteMessage(ModName + " Loaded.", MsgType.Good);
+                if (isInitialized)
+                    NotifyHelper.WriteMessage(ModName + " Loaded.", MsgType.Good);
+                else
+                    NotifyHelper.WriteMessage(ModName + " failed to load.", MsgType.Warning);
+
                 Integrations.BetterSkillsLoaded = true;
 
                 isLoaded = true;

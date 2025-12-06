@@ -1,6 +1,7 @@
 ﻿namespace BetterSkills.Localizations {
     public class RefValues {
-        public const string GenericHintText = "{=BSK_HXWM04}Increase of value per skill level (value of 1%, means 300% increase at skill level 300 )";
+        public const string GenericFactorHintText = "{=BSK_HXWM04}Increase of value by a factor per skill level (value of 1%, means 300% boost at skill level 300)";
+        public const string GenericAddHintText = "{=BSK_HXWM04}Increase of value per skill level (value of 1, means 300 increase at skill level 300)";
 
         public const string VigorText = "{=BSK_zdSsx4}Vigor";
         public const string ControlText = "{=BSK_ifrX6w}Control";
