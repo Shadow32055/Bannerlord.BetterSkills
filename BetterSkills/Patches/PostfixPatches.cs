@@ -182,35 +182,35 @@ namespace BetterSkills.Patches
                 EffectIncrementType.Add);
 
             _effectHorseSpeed(__instance).Initialize(
-                new TextObject("{=Y07OcP1T}Horse speed: +{a0}", null),
+                new TextObject("{=Y07OcP1T}Horse speed: {a0}", null),
                 DefaultSkills.Riding,
                 PartyRole.Personal,
                 BetterSkills.Settings.HorseSpeedValue,
                 EffectIncrementType.Add);
 
             _effectHorseManeuver(__instance).Initialize(
-                new TextObject("{=AahNTeXY}Horse maneuver: +{a0}", null),
+                new TextObject("{=AahNTeXY}Horse maneuver: {a0}", null),
                 DefaultSkills.Riding,
                 PartyRole.Personal,
                 BetterSkills.Settings.HorseManeuverValue,
                 EffectIncrementType.Add);
 
             _effectMountedWeaponDamagePenalty(__instance).Initialize(
-                new TextObject("{=0dbwEczK}Mounted weapon damage penalty: {a0}%", null),
+                new TextObject("{=0dbwEczK}Mounted weapon damage penalty: {a0}", null),
                 DefaultSkills.Riding,
                 PartyRole.Personal,
                 BetterSkills.Settings.MountWeaponDamagePenaltyValue,
                 EffectIncrementType.Add);
 
             _effectMountedWeaponSpeedPenalty(__instance).Initialize(
-                new TextObject("{=oE5etyy0}Mounted weapon speed & reload penalty: {a0}%", null),
+                new TextObject("{=oE5etyy0}Mounted weapon speed & reload penalty: {a0}", null),
                 DefaultSkills.Riding,
                 PartyRole.Personal,
                 BetterSkills.Settings.MountWeaponSpeedPenaltyValue,
                 EffectIncrementType.Add);
 
             _effectDismountResistance(__instance).Initialize(
-                new TextObject("{=kbHJVxAo}Dismount resistance: {a0}% of max. hitpoints", null),
+                new TextObject("{=kbHJVxAo}Dismount resistance: {a0} of max. hitpoints", null),
                 DefaultSkills.Riding,
                 PartyRole.Personal,
                 BetterSkills.Settings.DismountResistanceValue,
@@ -266,7 +266,7 @@ namespace BetterSkills.Patches
                 EffectIncrementType.AddFactor);
 
             _effectTrackingRadius(__instance).Initialize(
-                new TextObject("{=kqJipMqc}Track detection radius +{a0}%", null),
+                new TextObject("{=kqJipMqc}Track detection radius {a0}", null),
                 DefaultSkills.Scouting,
                 PartyRole.Scout,
                 BetterSkills.Settings.TrackingRadiusValue,
@@ -280,7 +280,7 @@ namespace BetterSkills.Patches
                 EffectIncrementType.Add);
 
             _effectTrackingSpottingDistance(__instance).Initialize(
-                new TextObject("{=lbrOAvKj}Spotting distance +{a0}%", null),
+                new TextObject("{=lbrOAvKj}Spotting distance {a0}", null),
                 DefaultSkills.Scouting,
                 PartyRole.Scout,
                 BetterSkills.Settings.TrackingSpottingDistanceValue,
@@ -315,21 +315,21 @@ namespace BetterSkills.Patches
                 EffectIncrementType.AddFactor);
 
             _effectLeadershipMoraleBonus(__instance).Initialize(
-                new TextObject("{=n3bFiuVu}Increase morale of the parties under your command +{a0}", null),
+                new TextObject("{=n3bFiuVu}Increase morale of the parties under your command {a0}", null),
                 DefaultSkills.Leadership,
                 PartyRole.Personal,
                 BetterSkills.Settings.LeadershipMoraleBonusValue,
                 EffectIncrementType.Add);
 
             _effectLeadershipGarrisonSizeBonus(__instance).Initialize(
-                new TextObject("{=cSt26auo}Increase garrison size by +{a0}", null),
+                new TextObject("{=cSt26auo}Increase garrison size by {a0}", null),
                 DefaultSkills.Leadership,
                 PartyRole.Personal,
                 BetterSkills.Settings.LeadershipGarrisonSizeBonusValue,
                 EffectIncrementType.Add);
 
             _effectSurgeonSurvivalBonus(__instance).Initialize(
-                new TextObject("{=w4BzNJYl}Casualty survival chance +{a0}%", null),
+                new TextObject("{=w4BzNJYl}Casualty survival chance {a0}", null),
                 DefaultSkills.Medicine,
                 PartyRole.Surgeon,
                 BetterSkills.Settings.SurgeonSurvivalBonusValue,
@@ -371,7 +371,7 @@ namespace BetterSkills.Patches
                 EffectIncrementType.AddFactor);
 
             _effectStewardPartySizeBonus(__instance).Initialize(
-                new TextObject("{=jNDUXetG}Increase party size by +{a0}", null),
+                new TextObject("{=jNDUXetG}Increase party size by {a0}", null),
                 DefaultSkills.Steward,
                 PartyRole.Quartermaster,
                 BetterSkills.Settings.StewardPartySizeBonusValue,
