@@ -42,7 +42,7 @@ namespace BetterSkills.Settings {
 
         [SettingPropertyGroup(RefValues.ControlText)]
         [SettingPropertyFloatingInteger(RefValues.BowAccuracyText, -0.03f, 0.03f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
-        public float BowAccuracyValue { get; set; } = 0.001f;
+        public float BowAccuracyValue { get; set; } = -0.001f;
 
         [SettingPropertyGroup(RefValues.ControlText)]
         [SettingPropertyFloatingInteger(RefValues.ThrowingSpeedText, -0.03f, 0.03f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
@@ -54,7 +54,7 @@ namespace BetterSkills.Settings {
 
         [SettingPropertyGroup(RefValues.ControlText)]
         [SettingPropertyFloatingInteger(RefValues.ThrowingAccText, -0.03f, 0.03f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
-        public float ThrowingAccuracyValue { get; set; } = 0.001f;
+        public float ThrowingAccuracyValue { get; set; } = -0.001f;
 
         [SettingPropertyGroup(RefValues.ControlText)]
         [SettingPropertyFloatingInteger(RefValues.CrossbowReloadText, -0.03f, 0.03f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
@@ -62,7 +62,7 @@ namespace BetterSkills.Settings {
 
         [SettingPropertyGroup(RefValues.ControlText)]
         [SettingPropertyFloatingInteger(RefValues.CrossbowAccText, -0.03f, 0.03f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
-        public float CrossbowAccuracyValue { get; set; } = 0.001f;
+        public float CrossbowAccuracyValue { get; set; } = -0.001f;
 
         // ---------------------- Endurance SKILLS ---------------------- //
 
@@ -76,11 +76,11 @@ namespace BetterSkills.Settings {
 
         [SettingPropertyGroup(RefValues.EnduranceText)]
         [SettingPropertyFloatingInteger(RefValues.MountWepDmgPenText, -0.1f, 0.1f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
-        public float MountWeaponDamagePenaltyValue { get; set; } = -0.003f;
+        public float MountWeaponDamagePenaltyValue { get; set; } = 0.003f;
 
         [SettingPropertyGroup(RefValues.EnduranceText)]
         [SettingPropertyFloatingInteger(RefValues.MountWepSpeedPenText, -0.03f, 0.03f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
-        public float MountWeaponSpeedPenaltyValue { get; set; } = -0.001f;
+        public float MountWeaponSpeedPenaltyValue { get; set; } = 0.001f;
 
         [SettingPropertyGroup(RefValues.EnduranceText)]
         [SettingPropertyFloatingInteger(RefValues.DismountResText, -0.25f, 0.25f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
@@ -92,7 +92,7 @@ namespace BetterSkills.Settings {
 
         [SettingPropertyGroup(RefValues.EnduranceText)]
         [SettingPropertyFloatingInteger(RefValues.AthleticsWeigthText, -0.03f, 0.03f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
-        public float AthleticsWeightFactorValue { get; set; } = 0.001f;
+        public float AthleticsWeightFactorValue { get; set; } = -0.001f;
 
         [SettingPropertyGroup(RefValues.EnduranceText)]
         [SettingPropertyFloatingInteger(RefValues.KnockbackResText, -0.03f, 0.03f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
@@ -131,6 +131,18 @@ namespace BetterSkills.Settings {
         [SettingPropertyGroup(RefValues.CunningText)]
         [SettingPropertyFloatingInteger(RefValues.LootBonusText, -0.03f, 0.03f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
         public float RogueryLootBonusValue { get; set; } = 0.004f;
+
+        [SettingPropertyGroup(RefValues.CunningText)]
+        [SettingPropertyFloatingInteger(RefValues.SneakDamageBonusText, -0.03f, 0.03f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
+        public float SneakDamageBonusValue { get; set; } = 0.003f;
+
+        [SettingPropertyGroup(RefValues.CunningText)]
+        [SettingPropertyFloatingInteger(RefValues.CrouchedSpeedBonusText, -0.03f, 0.03f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
+        public float CrouchedSpeedBonusValue { get; set; } = 0.003f;
+
+        [SettingPropertyGroup(RefValues.CunningText)]
+        [SettingPropertyFloatingInteger(RefValues.NoiseSuppressionBonusText, -0.03f, 0.03f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
+        public float NoiseSuppressionBonusValue { get; set; } = 0.002f;
 
         // ---------------------- Social SKILLS ---------------------- //
 
@@ -208,60 +220,82 @@ namespace BetterSkills.Settings {
             yield return new MemorySettingsPreset(
                 Id,
                 "vanilla",
-                "Vanilla (No Bonuses)",
+                "Vanilla (original)",
                 () => {
                     var s = (MCMSettings)CreateNew();
 
-                    // everything zero -> behaves like unmodded Bannerlord
-                    s.OneHandedSpeedValue = 0f;
-                    s.OneHandedDamageValue = 0f;
-                    s.TwoHandedSpeedValue = 0f;
-                    s.TwoHandedDamageValue = 0f;
-                    s.PolearmSpeedValue = 0f;
-                    s.PolearmDamageValue = 0f;
+                    // weapon stats
+                    s.OneHandedSpeedValue = 0.0007f;
+                    s.OneHandedDamageValue = 0.0015f;
+                    s.TwoHandedSpeedValue = 0.0006f;
+                    s.TwoHandedDamageValue = 0.0016f;
+                    s.PolearmSpeedValue = 0.0006f;
+                    s.PolearmDamageValue = 0.0007f;
 
-                    s.BowDamageValue = 0f;
-                    s.BowAccuracyValue = 0f;
-                    s.ThrowingSpeedValue = 0f;
-                    s.ThrowingDamageValue = 0f;
-                    s.ThrowingAccuracyValue = 0f;
-                    s.CrossbowReloadSpeedValue = 0f;
-                    s.CrossbowAccuracyValue = 0f;
+                    s.BowDamageValue = 0.0011f;
+                    s.BowAccuracyValue = -0.0009f;
+                    s.ThrowingSpeedValue = 0.0007f;
+                    s.ThrowingDamageValue = 0.0006f;
+                    s.ThrowingAccuracyValue = -0.0006f;
+                    s.CrossbowReloadSpeedValue = 0.0007f;
+                    s.CrossbowAccuracyValue = -0.0005f;
 
-                    s.HorseSpeedValue = 0f;
-                    s.HorseManeuverValue = 0f;
-                    s.MountWeaponDamagePenaltyValue = 0f;
-                    s.MountWeaponSpeedPenaltyValue = 0f;
-                    s.DismountResistanceValue = 0f;
-                    s.AthleticsSpeedFactorValue = 0f;
-                    s.AthleticsWeightFactorValue = 0f;
-                    s.KnockBackResistanceValue = 0f;
-                    s.KnockDownResistanceValue = 0f;
-                    s.SmithingLevelValue = 0f;
+                    // riding stats
+                    s.HorseSpeedValue = 0.002f;
+                    s.HorseManeuverValue = 0.0004f;
+                    s.MountWeaponDamagePenaltyValue = 0.002f;
+                    s.MountWeaponSpeedPenaltyValue = 0.003f;
+                    s.DismountResistanceValue = 0.001f;
 
-                    s.TacticsAdvantageValue = 0f;
-                    s.TacticsTroopSacrificeReductionValue = 0f;
-                    s.TrackingRadiusValue = 0f;
-                    s.TrackingSpottingDistanceValue = 0f;
-                    s.TrackingTrackInformationValue = 0f;
-                    s.RogueryLootBonusValue = 0f;
+                    // athletics stats
+                    s.AthleticsSpeedFactorValue = 0.001f;
+                    s.AthleticsWeightFactorValue = -0.001f;
+                    s.KnockBackResistanceValue = 0.001f;
+                    s.KnockDownResistanceValue = 0.001f;
 
-                    s.CharmRelationBonusValue = 0f;
-                    s.TradePenaltyReductionValue = 0f;
-                    s.LeadershipMoraleBonusValue = 0f;
-                    s.LeadershipGarrisonSizeBonusValue = 0f;
+                    // crafting
+                    s.SmithingLevelValue = 1f;
 
-                    s.SurgeonSurvivalBonusValue = 0f;
-                    s.HealingRateBonusForHeroesValue = 0f;
-                    s.HealingRateBonusForRegularsValue = 0f;
-                    s.GovernorHealingRateBonusValue = 0f;
-                    s.SiegeEngineProductionBonusValue = 0f;
-                    s.TownProjectBuildingBonusValue = 0f;
-                    s.StewardPartySizeBonusValue = 0f;
+                    // tactics
+                    s.TacticsAdvantageValue = 0.001f;
+                    s.TacticsTroopSacrificeReductionValue = -0.001f;
+
+                    // scouting
+                    s.TrackingRadiusValue = 0.1f;
+                    s.TrackingSpottingDistanceValue = 0.06f;
+                    s.TrackingTrackInformationValue = 0.04f;
+
+                    // roguery
+                    s.RogueryLootBonusValue = 0.0025f;
+
+                    // charm/trade/leadership
+                    s.CharmRelationBonusValue = 0.005f;
+                    s.TradePenaltyReductionValue = 0.002f;
+                    s.LeadershipMoraleBonusValue = 0.1f;
+                    s.LeadershipGarrisonSizeBonusValue = 0.2f;
+
+                    // medicine
+                    s.SurgeonSurvivalBonusValue = 0.0025f;
+                    s.HealingRateBonusForHeroesValue = 0.005f;
+                    s.HealingRateBonusForRegularsValue = 0.01f;
+                    s.GovernorHealingRateBonusValue = 0.001f;
+
+                    // engineering
+                    s.SiegeEngineProductionBonusValue = 0.001f;
+                    s.TownProjectBuildingBonusValue = 0.0025f;
+
+                    // steward
+                    s.StewardPartySizeBonusValue = 0.25f;
+
+                    // roguery/stealth
+                    s.SneakDamageBonusValue = 0.002f;
+                    s.CrouchedSpeedBonusValue = 0.0005f;
+                    s.NoiseSuppressionBonusValue = 0.0025f;
 
                     return s;
                 }
             );
+
 
             // 2) Arcade Preset
             // 2) Arcade Preset (~2× default)
@@ -284,26 +318,26 @@ namespace BetterSkills.Settings {
 
                     // ---------------------- CONTROL ---------------------- //
                     s.BowDamageValue = 0.002f;
-                    s.BowAccuracyValue = 0.002f;
+                    s.BowAccuracyValue = -0.002f;
 
                     s.ThrowingSpeedValue = 0.002f;
                     s.ThrowingDamageValue = 0.002f;
-                    s.ThrowingAccuracyValue = 0.002f;
+                    s.ThrowingAccuracyValue = -0.002f;
 
                     s.CrossbowReloadSpeedValue = 0.002f;
-                    s.CrossbowAccuracyValue = 0.002f;
+                    s.CrossbowAccuracyValue = -0.002f;
 
                     // ---------------------- ENDURANCE ---------------------- //
                     s.HorseSpeedValue = 0.10f;              // 2 × 0.05f additive
                     s.HorseManeuverValue = 0.004f;          // 2 × 0.002f factor
 
-                    s.MountWeaponDamagePenaltyValue = -0.006f; // 2 × -0.003 factor
-                    s.MountWeaponSpeedPenaltyValue = -0.002f;  // 2 × -0.001 factor
+                    s.MountWeaponDamagePenaltyValue = 0.006f; // 2 × -0.003 factor
+                    s.MountWeaponSpeedPenaltyValue = 0.002f;  // 2 × -0.001 factor
 
                     s.DismountResistanceValue = 0.04f;      // 2 × 0.02 additive
 
                     s.AthleticsSpeedFactorValue = 0.002f;
-                    s.AthleticsWeightFactorValue = 0.002f;
+                    s.AthleticsWeightFactorValue = -0.002f;
 
                     s.KnockBackResistanceValue = 0.02f;
                     s.KnockDownResistanceValue = 0.02f;
@@ -312,7 +346,7 @@ namespace BetterSkills.Settings {
 
                     // ---------------------- CUNNING ---------------------- //
                     s.TacticsAdvantageValue = 0.002f;
-                    s.TacticsTroopSacrificeReductionValue = 0.002f;
+                    s.TacticsTroopSacrificeReductionValue = -0.002f;
 
                     s.TrackingRadiusValue = 0.10f;          // 2 × 0.05 additive
                     s.TrackingSpottingDistanceValue = 0.16f; // 2 × 0.08 additive
@@ -353,40 +387,40 @@ namespace BetterSkills.Settings {
                     var s = (MCMSettings)CreateNew();
 
                     // ---------------------- VIGOR (slow weak attacks) ---------------------- //
-                    s.OneHandedSpeedValue = -0.003f;
-                    s.OneHandedDamageValue = -0.003f;
+                    s.OneHandedSpeedValue = -0.03f;
+                    s.OneHandedDamageValue = 0f;
 
-                    s.TwoHandedSpeedValue = -0.003f;
-                    s.TwoHandedDamageValue = -0.003f;
+                    s.TwoHandedSpeedValue = -0.03f;
+                    s.TwoHandedDamageValue = 0;
 
-                    s.PolearmSpeedValue = -0.003f;
-                    s.PolearmDamageValue = -0.003f;
+                    s.PolearmSpeedValue = -0.03f;
+                    s.PolearmDamageValue = 0;
 
                     // ---------------------- CONTROL (sand in the eyes) ---------------------- //
-                    s.BowDamageValue = -0.003f;
-                    s.BowAccuracyValue = -0.003f;
+                    s.BowDamageValue = 0;
+                    s.BowAccuracyValue = 0;
 
-                    s.ThrowingSpeedValue = -0.003f;
-                    s.ThrowingDamageValue = -0.003f;
-                    s.ThrowingAccuracyValue = -0.003f;
+                    s.ThrowingSpeedValue = -0.03f;
+                    s.ThrowingDamageValue = 0f;
+                    s.ThrowingAccuracyValue = 0f;
 
-                    s.CrossbowReloadSpeedValue = -0.003f;
-                    s.CrossbowAccuracyValue = -0.003f;
+                    s.CrossbowReloadSpeedValue = -0.03f;
+                    s.CrossbowAccuracyValue = 0f;
 
                     // ---------------------- ENDURANCE (slooooow bodies) ---------------------- //
                     s.HorseSpeedValue = -0.003f;         // horses exhausted
                     s.HorseManeuverValue = -0.004f;
 
-                    s.MountWeaponDamagePenaltyValue = 0.02f; // makes mounted worse
-                    s.MountWeaponSpeedPenaltyValue = 0.02f;
+                    s.MountWeaponDamagePenaltyValue = 0.03f; // makes mounted worse
+                    s.MountWeaponSpeedPenaltyValue = 0.03f;
 
-                    s.DismountResistanceValue = -0.01f; // easier to knock off
+                    s.DismountResistanceValue = -0.03f; // easier to knock off
 
                     s.AthleticsSpeedFactorValue = -0.001f;   // walking through molasses
                     s.AthleticsWeightFactorValue = -0.001f;  // armor feels heavier
 
-                    s.KnockBackResistanceValue = -0.01f;
-                    s.KnockDownResistanceValue = -0.01f;
+                    s.KnockBackResistanceValue = -0.03f;
+                    s.KnockDownResistanceValue = -0.03f;
 
                     s.SmithingLevelValue = 0.8f;  // old craftsmen still know some tricks
 
