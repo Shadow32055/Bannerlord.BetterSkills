@@ -56,7 +56,7 @@
         public const string PartySizeText = "{=BSK_n8pzfh}Increase party size by";
         public const string EngineerText = "{=BSK_LdNOT9}Max difficulty of siege engine that can be built";
 
-        public const string SneakDamageBonusText = "{=BSK_sVAfQB}Sneak attack damage increase by"";
+        public const string SneakDamageBonusText = "{=BSK_sVAfQB}Sneak attack damage increase by";
         public const string CrouchedSpeedBonusText = "{=BSK_3rEZ2O}Crouched increase by";
         public const string NoiseSuppressionBonusText = "{=BSK_a94Az0}}Noise suppression decreased by";
 
