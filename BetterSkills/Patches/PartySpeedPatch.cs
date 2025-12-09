@@ -40,8 +40,7 @@ namespace BetterSkills.Patches
                      NotifyHelper.WriteMessage("PartySpeedPatch: Harmony Patch Completed: " + targetType.Name, MsgType.Notify);
 #endif
                 }
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
                 NotifyHelper.WriteError("PartySpeedPatch", $"Failed to patch PartySpeedModel: {e} \nInner: {e.InnerException}");
             }
             return true;
@@ -74,8 +73,7 @@ namespace BetterSkills.Patches
                 // add both value and a tooltip line
                 __result.Add(bonus, new TextObject("Scouting Skill Bonus"));
                 __result.LimitMin(__instance.MinimumSpeed);
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
                 NotifyHelper.WriteError("CalculateFinalSpeed", "threw exception " + e);
             }
         }

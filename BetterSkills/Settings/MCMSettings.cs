@@ -75,7 +75,7 @@ namespace BetterSkills.Settings {
         public float HorseManeuverValue { get; set; } = 0.001f;
 
         [SettingPropertyGroup(RefValues.EnduranceText)]
-        [SettingPropertyFloatingInteger(RefValues.MountWepDmgPenText, -0.1f, 0.1f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
+        [SettingPropertyFloatingInteger(RefValues.MountWepDmgPenText, -0.03f, 0.03f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
         public float MountWeaponDamagePenaltyValue { get; set; } = 0.005f;
 
         [SettingPropertyGroup(RefValues.EnduranceText)]
@@ -83,7 +83,7 @@ namespace BetterSkills.Settings {
         public float MountWeaponSpeedPenaltyValue { get; set; } = 0.005f;
 
         [SettingPropertyGroup(RefValues.EnduranceText)]
-        [SettingPropertyFloatingInteger(RefValues.DismountResText, -0.25f, 0.25f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
+        [SettingPropertyFloatingInteger(RefValues.DismountResText, -0.03f, 0.03f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
         public float DismountResistanceValue { get; set; } = 0.005f;
 
         [SettingPropertyGroup(RefValues.EnduranceText)]
@@ -117,19 +117,19 @@ namespace BetterSkills.Settings {
         public float TacticsTroopSacrificeReductionValue { get; set; } = -0.002f;
 
         [SettingPropertyGroup(RefValues.CunningText)]
-        [SettingPropertyFloatingInteger(RefValues.TrackingText, -0.25f, 0.25f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
+        [SettingPropertyFloatingInteger(RefValues.TrackingText, -1.0f, 1.0f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
         public float TrackingRadiusValue { get; set; } = 0.2f;
 
         [SettingPropertyGroup(RefValues.CunningText)]
-        [SettingPropertyFloatingInteger(RefValues.TrackingSpotText, -0.25f, 0.25f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
+        [SettingPropertyFloatingInteger(RefValues.TrackingSpotText, -1.0f, 1.0f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
         public float TrackingSpottingDistanceValue { get; set; } = 0.1f;
 
         [SettingPropertyGroup(RefValues.CunningText)]
-        [SettingPropertyFloatingInteger(RefValues.TrackingInfoText, -0.25f, 0.25f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
+        [SettingPropertyFloatingInteger(RefValues.TrackingInfoText, -1.0f, 1.0f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
         public float TrackingTrackInformationValue { get; set; } = 0.1f;
 
         [SettingPropertyGroup(RefValues.CunningText)]
-        [SettingPropertyFloatingInteger(RefValues.LootBonusText, -0.03f, 0.03f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
+        [SettingPropertyFloatingInteger(RefValues.LootBonusText, -0.1f, 0.1f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
         public float RogueryLootBonusValue { get; set; } = 0.005f;
 
         [SettingPropertyGroup(RefValues.CunningText)]
@@ -159,7 +159,7 @@ namespace BetterSkills.Settings {
         public float LeadershipMoraleBonusValue { get; set; } = 0.02f;
 
         [SettingPropertyGroup(RefValues.SocialText)]
-        [SettingPropertyFloatingInteger(RefValues.LeaderGarrisonText, -0.25f, 0.25f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
+        [SettingPropertyFloatingInteger(RefValues.LeaderGarrisonText, -1.0f, 1.0f, "0.00", Order = 0, RequireRestart = false, HintText = RefValues.GenericAddHintText)]
         public float LeadershipGarrisonSizeBonusValue { get; set; } = 0.3f;
 
         // ---------------------- Intelligence SKILLS ---------------------- //

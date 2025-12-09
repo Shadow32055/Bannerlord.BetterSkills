@@ -76,10 +76,12 @@ namespace BetterSkills.Patches {
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(DefaultSkillEffects), "InitializeAll")]
-        public static void InitializeAll(DefaultSkillEffects __instance){
-            try{
-                float minimumFactorClamp = -0.75f;          // limit min value to -0.75 (-75%), just to avoid negative numbers shenanigans 
+        public static void InitializeAll(DefaultSkillEffects __instance) {
+            try {
+                float minimumFactorClamp = -0.75f;          // limit min value to -0.75 (-75%), just to avoid negative numbers shenanigans (e.g. starting to run backwards when running forward)
                 float minimumAddClamp = float.MinValue;     // limit min value for adding operation (needed?) 
+                float minimumWeightFactor = -0.50f;         // make sure that the minimum weight of you armour is locked at 75% lighter (should perhaps be even higher)
+                float maximumPenaltyFactor = 0f;            // both MountedWeaponDamage and Speed Penalty should never go over 0 (i.e. all weapons should not be stronger on horseback)
 
                 _effectOneHandedSpeed(__instance).Initialize(
                     new TextObject("{=hjxRvb9l}One handed weapon speed: +{a0}%", null),
@@ -208,9 +210,9 @@ namespace BetterSkills.Patches {
                     PartyRole.Personal,
                     BetterSkills.Settings.MountWeaponDamagePenaltyValue,
                     EffectIncrementType.AddFactor,
-                    -0.2f,
-                    minimumFactorClamp, 
-                    0.99f);
+                    -0.2f,  // default Weapon Penalty
+                    minimumFactorClamp,
+                    maximumPenaltyFactor);
 
                 _effectMountedWeaponSpeedPenalty(__instance).Initialize(
                     new TextObject("{=oE5etyy0}Mounted weapon speed & reload penalty: {a0}%", null),
@@ -218,9 +220,9 @@ namespace BetterSkills.Patches {
                     PartyRole.Personal,
                     BetterSkills.Settings.MountWeaponSpeedPenaltyValue,
                     EffectIncrementType.AddFactor,
-                    -0.3f,
+                    -0.3f, // default speed (weapon/reload) Penalty
                     minimumFactorClamp,
-                    0.99f);
+                    maximumPenaltyFactor);
 
                 _effectDismountResistance(__instance).Initialize(
                     new TextObject("{=kbHJVxAo}Dismount resistance: {a0}% of max. hitpoints", null),
@@ -228,7 +230,7 @@ namespace BetterSkills.Patches {
                     PartyRole.Personal,
                     BetterSkills.Settings.DismountResistanceValue,
                     EffectIncrementType.AddFactor,
-                    0.4f,
+                    0.4f,   // default dismount resistance
                     minimumFactorClamp);
 
                 _effectAthleticsSpeedFactor(__instance).Initialize(
@@ -245,7 +247,7 @@ namespace BetterSkills.Patches {
                     PartyRole.Personal,
                     BetterSkills.Settings.AthleticsWeightFactorValue,
                     EffectIncrementType.AddFactor,
-                    limitMin: minimumFactorClamp);
+                    limitMin: minimumWeightFactor);
 
                 _effectKnockBackResistance(__instance).Initialize(
                     new TextObject("{=TyjDHQUv}Knock back resistance: {a0}% of max. hitpoints", null),
@@ -253,7 +255,7 @@ namespace BetterSkills.Patches {
                     PartyRole.Personal,
                     BetterSkills.Settings.KnockBackResistanceValue,
                     EffectIncrementType.AddFactor,
-                    0.15f,
+                    0.15f,  // default knockback resistance
                     minimumFactorClamp);
 
                 _effectKnockDownResistance(__instance).Initialize(
@@ -262,7 +264,7 @@ namespace BetterSkills.Patches {
                     PartyRole.Personal,
                     BetterSkills.Settings.KnockDownResistanceValue,
                     EffectIncrementType.AddFactor,
-                    0.4f,
+                    0.4f,   // default knockdown resistance
                     minimumFactorClamp);
 
                 _effectSmithingLevel(__instance).Initialize(
@@ -314,10 +316,8 @@ namespace BetterSkills.Patches {
                     limitMin: minimumAddClamp);
 
                 // new skill bonus
-                try
-                {
-                    if (_effectScoutingPartySpeed == null)
-                    {
+                try {
+                    if (_effectScoutingPartySpeed == null) {
                         _effectScoutingPartySpeed = Game.Current.ObjectManager
                             .RegisterPresumedObject<SkillEffect>(new SkillEffect("ScoutingPartySpeed"));
                     }
@@ -330,9 +330,7 @@ namespace BetterSkills.Patches {
                         EffectIncrementType.Add,
                         0f
                     );
-                }
-                catch (Exception e)
-                {
+                } catch (Exception e) {
                     NotifyHelper.WriteError(nameof(DefaultSkillEffects), $"writing to skills failed: {e}");
                 }
 
@@ -438,7 +436,7 @@ namespace BetterSkills.Patches {
                     PartyRole.Personal,
                     BetterSkills.Settings.SneakDamageBonusValue,
                     EffectIncrementType.AddFactor,
-                    0.5f,
+                    0.5f,   // default Sneak attack multiplier
                     minimumFactorClamp);
 
                 _effectCrouchedSpeed(__instance).Initialize(
