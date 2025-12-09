@@ -58,10 +58,10 @@
 
         public const string SneakDamageBonusText = "{=BSK_sVAfQB}Sneak attack damage increase by";
         public const string CrouchedSpeedBonusText = "{=BSK_3rEZ2O}Crouched increase by";
-        public const string NoiseSuppressionBonusText = "{=BSK_a94Az0}}Noise suppression decreased by";
+        public const string NoiseSuppressionBonusText = "{=BSK_a94Az0}Noise suppression decreased by";
 
-        public const string ScoutingBonusText = "{=BSK_sVAfQB}Party speed increase by";
-        public const string ScoutingBonusPlayerText = "{=BSK_3rEZ2O}Player Only";
-        public const string ScoutingSkillBonusText = "{=BSK_a94Az0}Party speed bonus from scouting";
+        public const string ScoutingBonusText = "{=BSK_uMlkkq}Party speed increase by";
+        public const string ScoutingBonusPlayerText = "{=BSK_C2GlZN}Player Only";
+        public const string ScoutingSkillBonusText = "{=BSK_1FwNE4}Party speed bonus from scouting";
     }
 }

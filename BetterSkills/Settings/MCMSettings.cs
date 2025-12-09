@@ -412,7 +412,7 @@ namespace BetterSkills.Settings {
                     s.CrossbowAccuracyValue = -0.004f;
 
                     // ---------------------- ENDURANCE ---------------------- //
-                    s.HorseSpeedValue = -0.05f;
+                    s.HorseSpeedValue = -0.01f;
                     s.HorseManeuverValue = -0.003f;
 
                     s.MountWeaponDamagePenaltyValue = 0.0005f;
@@ -420,8 +420,8 @@ namespace BetterSkills.Settings {
 
                     s.DismountResistanceValue = 0.0005f;
 
-                    s.AthleticsSpeedFactorValue = -0.02f;
-                    s.AthleticsWeightFactorValue = 0.01f;
+                    s.AthleticsSpeedFactorValue = -0.001f;
+                    s.AthleticsWeightFactorValue = 0.005f;
 
                     s.KnockBackResistanceValue = 0.0005f;
                     s.KnockDownResistanceValue = 0.0005f;
