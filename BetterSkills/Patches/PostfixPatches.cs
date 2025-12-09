@@ -82,6 +82,9 @@ namespace BetterSkills.Patches {
                 float minimumAddClamp = float.MinValue;     // limit min value for adding operation (needed?) 
                 float minimumWeightFactor = -0.50f;         // make sure that the minimum weight of you armour is locked at 75% lighter (should perhaps be even higher)
                 float maximumPenaltyFactor = 0f;            // both MountedWeaponDamage and Speed Penalty should never go over 0 (i.e. all weapons should not be stronger on horseback)
+                float maximumNoiseSuppression = 1.0f;       // no need to go past -100% Noise Suppression
+                float maximumResistance = 0.95f;            // limit all Resistance to max 95% so that it still possiable although hard to get knockdown/-back
+                float minimumHealing = 0.0f;                // make sure that Healing don't go below 0, may cause extinction or not, did not test
 
                 _effectOneHandedSpeed(__instance).Initialize(
                     new TextObject("{=hjxRvb9l}One handed weapon speed: +{a0}%", null),
@@ -231,7 +234,8 @@ namespace BetterSkills.Patches {
                     BetterSkills.Settings.DismountResistanceValue,
                     EffectIncrementType.AddFactor,
                     0.4f,   // default dismount resistance
-                    minimumFactorClamp);
+                    minimumFactorClamp,
+                    maximumResistance);
 
                 _effectAthleticsSpeedFactor(__instance).Initialize(
                     new TextObject("{=rgb6vdon}Running speed increased by {a0}%", null),
@@ -256,7 +260,8 @@ namespace BetterSkills.Patches {
                     BetterSkills.Settings.KnockBackResistanceValue,
                     EffectIncrementType.AddFactor,
                     0.15f,  // default knockback resistance
-                    minimumFactorClamp);
+                    minimumFactorClamp,
+                    maximumResistance);
 
                 _effectKnockDownResistance(__instance).Initialize(
                     new TextObject("{=tlNZIH3l}Knock down resistance: {a0}% of max. hitpoints", null),
@@ -265,7 +270,8 @@ namespace BetterSkills.Patches {
                     BetterSkills.Settings.KnockDownResistanceValue,
                     EffectIncrementType.AddFactor,
                     0.4f,   // default knockdown resistance
-                    minimumFactorClamp);
+                    minimumFactorClamp,
+                    maximumResistance);
 
                 _effectSmithingLevel(__instance).Initialize(
                     new TextObject("{=ImN8Cfk6}Max difficulty of weapon that can be smithed without penalty: {a0}%", null),
@@ -388,7 +394,7 @@ namespace BetterSkills.Patches {
                     PartyRole.Surgeon,
                     BetterSkills.Settings.HealingRateBonusForHeroesValue,
                     EffectIncrementType.AddFactor,
-                    limitMin: minimumFactorClamp);
+                    limitMin: minimumHealing);
 
                 _effectHealingRateBonusForRegulars(__instance).Initialize(
                     new TextObject("{=A310vHqJ}Healing rate increase for troops +{a0}%", null),
@@ -396,7 +402,7 @@ namespace BetterSkills.Patches {
                     PartyRole.Surgeon,
                     BetterSkills.Settings.HealingRateBonusForRegularsValue,
                     EffectIncrementType.AddFactor,
-                    limitMin: minimumFactorClamp);
+                    limitMin: minimumHealing);
 
                 _effectGovernorHealingRateBonus(__instance).Initialize(
                     new TextObject("{=6mQGst9s}Healing rate increase +{a0}%", null),
@@ -404,7 +410,7 @@ namespace BetterSkills.Patches {
                     PartyRole.Governor,
                     BetterSkills.Settings.GovernorHealingRateBonusValue,
                     EffectIncrementType.AddFactor,
-                    limitMin: minimumFactorClamp);
+                    limitMin: minimumHealing);
 
                 _effectSiegeEngineProductionBonus(__instance).Initialize(
                     new TextObject("{=spbYlf0y}Faster siege engine production +{a0}%", null),
@@ -445,7 +451,7 @@ namespace BetterSkills.Patches {
                    PartyRole.Personal,
                    BetterSkills.Settings.CrouchedSpeedBonusValue,
                    EffectIncrementType.AddFactor,
-                   minimumFactorClamp);
+                   limitMin: minimumFactorClamp);
 
                 _effectNoiseSuppression(__instance).Initialize(
                    new TextObject("{=GzLd3ca9}Noise suppression -{a0}%", null),
@@ -453,7 +459,8 @@ namespace BetterSkills.Patches {
                    PartyRole.Personal,
                    BetterSkills.Settings.NoiseSuppressionBonusValue,
                    EffectIncrementType.AddFactor,
-                   minimumFactorClamp);
+                   limitMin: minimumFactorClamp,
+                   limitMax: maximumNoiseSuppression);
 
 #if DEBUG
         NotifyHelper.WriteMessage($"{nameof(DefaultSkillEffects)} Initialize skills", MsgType.Notify);
