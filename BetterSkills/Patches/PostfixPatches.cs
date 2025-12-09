@@ -7,12 +7,10 @@ using TaleWorlds.Core;
 using TaleWorlds.Localization;
 using static HarmonyLib.AccessTools;
 
-namespace BetterSkills.Patches
-{
-
+namespace BetterSkills.Patches {
+    
     [HarmonyPatch]
-    class PostfixPatches
-    {
+    class PostfixPatches {
 
         /*
 		[HarmonyPrefix]
@@ -75,14 +73,11 @@ namespace BetterSkills.Patches
         static FieldRef<DefaultSkillEffects, SkillEffect> _effectNoiseSuppression = AccessTools.FieldRefAccess<DefaultSkillEffects, SkillEffect>("_effectNoiseSuppression");
 
         private static SkillEffect _effectScoutingPartySpeed;
-        //private static readonly SkillEffect _effectScoutingPartySpeed = NewSkillEffect();
 
         [HarmonyPostfix]
         [HarmonyPatch(typeof(DefaultSkillEffects), "InitializeAll")]
-        public static void InitializeAll(DefaultSkillEffects __instance)
-        {
-            try
-            {
+        public static void InitializeAll(DefaultSkillEffects __instance){
+            try{
                 float minimumFactorClamp = -0.75f;          // limit min value to -0.75 (-75%), just to avoid negative numbers shenanigans 
                 float minimumAddClamp = float.MinValue;     // limit min value for adding operation (needed?) 
 
@@ -465,9 +460,7 @@ namespace BetterSkills.Patches
 #if DEBUG
         NotifyHelper.WriteMessage($"{nameof(DefaultSkillEffects)} Initialize skills", MsgType.Notify);
 #endif
-            }
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 NotifyHelper.WriteError(nameof(DefaultSkillEffects), $"writing to skills failed: {e}");
             }
         }
