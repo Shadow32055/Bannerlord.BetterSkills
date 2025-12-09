@@ -1,7 +1,7 @@
 ﻿namespace BetterSkills.Localizations {
     public class RefValues {
         public const string GenericFactorHintText = "{=BSK_HXWM04}Increase of value by a factor per skill level (value of 1%, means 300% boost at skill level 300)";
-        public const string GenericAddHintText = "{=BSK_HXWM04}Increase of value per skill level (value of 1, means 300 increase at skill level 300)";
+        public const string GenericAddHintText = "{=BSK_YoWCRI}Increase of value per skill level (value of 1, means 300 increase at skill level 300)";
 
         public const string VigorText = "{=BSK_zdSsx4}Vigor";
         public const string ControlText = "{=BSK_ifrX6w}Control";
@@ -9,6 +9,7 @@
         public const string CunningText = "{=BSK_rOIFaR}Cunning";
         public const string SocialText = "{=BSK_rRTelH}Social";
         public const string IntelligenceText = "{=BSK_PaVeLF}Intelligence";
+        public const string BonusText = "{=BSK_sVAfQB}Bonus";
 
         public const string OneHandedSpeedText = "{=BSK_PVF3Oo}One handed weapon speed";
         public const string OneHandedDamageText = "{=BSK_Trdjah}One handed weapon damage";
@@ -18,12 +19,12 @@
         public const string PolearmDamageText = "{=BSK_jhkLqN}Polearm weapon damage";
         public const string BowLevelText = "{=BSK_3NaO0z}Max usable bow difficulty";
         public const string BowDmgText = "{=BSK_jMdx0I}Bow Damage";
-        public const string BowAccuracyText = "{=BSK_W0DeeE}Bow Accuracy";
+        public const string BowAccuracyText = "{=BSK_W0DeeE}Bow Accuracy penalty";
         public const string ThrowingSpeedText = "{=BSK_ROZAeq}Thrown weapon speed";
         public const string ThrowingDamageText = "{=BSK_m3VgIW}Thrown weapon damage";
-        public const string ThrowingAccText = "{=BSK_M9jg0h}Thrown weapon accuracy";
+        public const string ThrowingAccText = "{=BSK_M9jg0h}Thrown weapon accuracy penalty";
         public const string CrossbowReloadText = "{=BSK_8Sqzj4}Crossbow reload speed";
-        public const string CrossbowAccText = "{=BSK_MifmuY}Crossbow accuracy";
+        public const string CrossbowAccText = "{=BSK_MifmuY}Crossbow accuracy penalty";
         public const string HorseLevelText = "{=BSK_xDleVU}Max mount difficulty";
         public const string HorseSpeedText = "{=BSK_3eQ8bY}Horse speed";
         public const string HorseManeuverText = "{=BSK_0KW9N2}Horse maneuver";
@@ -54,5 +55,13 @@
         public const string TownProjectText = "{=BSK_Zg9bAe}Faster building production";
         public const string PartySizeText = "{=BSK_n8pzfh}Increase party size by";
         public const string EngineerText = "{=BSK_LdNOT9}Max difficulty of siege engine that can be built";
+
+        public const string SneakDamageBonusText = "{=BSK_sVAfQB}Sneak attack damage increase by";
+        public const string CrouchedSpeedBonusText = "{=BSK_3rEZ2O}Crouched increase by";
+        public const string NoiseSuppressionBonusText = "{=BSK_a94Az0}Noise suppression decreased by";
+
+        public const string ScoutingBonusText = "{=BSK_uMlkkq}Party speed increase by";
+        public const string ScoutingBonusPlayerText = "{=BSK_C2GlZN}Player Only";
+        public const string ScoutingSkillBonusText = "{=BSK_1FwNE4}Party speed bonus from scouting";
     }
 }
