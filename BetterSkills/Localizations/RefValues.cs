@@ -1,7 +1,7 @@
 ﻿namespace BetterSkills.Localizations {
     public class RefValues {
         public const string GenericFactorHintText = "{=BSK_HXWM04}Increase of value by a factor per skill level (value of 1%, means 300% boost at skill level 300)";
-        public const string GenericAddHintText = "{=BSK_HXWM04}Increase of value per skill level (value of 1, means 300 increase at skill level 300)";
+        public const string GenericAddHintText = "{=BSK_YoWCRI}Increase of value per skill level (value of 1, means 300 increase at skill level 300)";
 
         public const string VigorText = "{=BSK_zdSsx4}Vigor";
         public const string ControlText = "{=BSK_ifrX6w}Control";
@@ -9,6 +9,7 @@
         public const string CunningText = "{=BSK_rOIFaR}Cunning";
         public const string SocialText = "{=BSK_rRTelH}Social";
         public const string IntelligenceText = "{=BSK_PaVeLF}Intelligence";
+        public const string BonusText = "{=BSK_sVAfQB}Bonus";
 
         public const string OneHandedSpeedText = "{=BSK_PVF3Oo}One handed weapon speed";
         public const string OneHandedDamageText = "{=BSK_Trdjah}One handed weapon damage";
@@ -54,5 +55,9 @@
         public const string TownProjectText = "{=BSK_Zg9bAe}Faster building production";
         public const string PartySizeText = "{=BSK_n8pzfh}Increase party size by";
         public const string EngineerText = "{=BSK_LdNOT9}Max difficulty of siege engine that can be built";
+
+        public const string ScoutingBonusText = "{=BSK_sVAfQB}Party speed increase by";
+        public const string ScoutingBonusPlayerText = "{=BSK_3rEZ2O}Player Only";
+        public const string ScoutingSkillBonusText = "{=BSK_a94Az0}Party speed bonus from scouting";
     }
 }

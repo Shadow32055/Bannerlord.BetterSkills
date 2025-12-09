@@ -1,7 +1,10 @@
 ﻿using BetterCore.Utils;
+using BetterSkills.Patches;
 using BetterSkills.Settings;
 using HarmonyLib;
 using System;
+using TaleWorlds.CampaignSystem;
+using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
 
 namespace BetterSkills {
@@ -11,6 +14,7 @@ namespace BetterSkills {
 
         private bool isInitialized = false;
         private bool isLoaded = false;
+        private Harmony _harmony;
 
         //FIRST
         protected override void OnSubModuleLoad() {
@@ -20,9 +24,8 @@ namespace BetterSkills {
                 if (isInitialized)
                     return;
 
-                Harmony h = new("Bannerlord.Shadow." + ModName);
-
-                h.PatchAll();
+                _harmony = new("Bannerlord.Shadow." + ModName);
+                _harmony.PatchAll();
 
                 isInitialized = true;
             } catch (Exception e) {
@@ -52,6 +55,26 @@ namespace BetterSkills {
                 isLoaded = true;
             } catch (Exception e) {
                 NotifyHelper.WriteError(ModName, "OnBeforeInitialModuleScreenSetAsRoot threw exception " + e);
+            }
+        }
+
+        // On game start 
+        protected override void OnGameStart(Game game, IGameStarter gameStarterObject)
+        {
+            base.OnGameStart(game, gameStarterObject);
+
+            if (game.GameType is Campaign)
+            {
+                CampaignEvents.OnGameLoadedEvent.AddNonSerializedListener(this, OnCampaignReady);
+            }
+        }
+
+        // On game loaded
+        private void OnCampaignReady(CampaignGameStarter starter)
+        {
+            if (!PartySpeedPatch.PatchPartySpeedModel(_harmony))
+            {
+                NotifyHelper.WriteError(ModName, "PartySpeedPatch failed to patch");
             }
         }
     }
