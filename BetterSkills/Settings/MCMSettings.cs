@@ -134,15 +134,15 @@ namespace BetterSkills.Settings {
 
         [SettingPropertyGroup(RefValues.CunningText)]
         [SettingPropertyFloatingInteger(RefValues.SneakDamageBonusText, -0.03f, 0.03f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
-        public float SneakDamageBonusValue { get; set; } = 0.003f;
+        public float SneakDamageBonusValue { get; set; } = 0.002f;
 
         [SettingPropertyGroup(RefValues.CunningText)]
         [SettingPropertyFloatingInteger(RefValues.CrouchedSpeedBonusText, -0.03f, 0.03f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
-        public float CrouchedSpeedBonusValue { get; set; } = 0.003f;
+        public float CrouchedSpeedBonusValue { get; set; } = 0.0001f;
 
         [SettingPropertyGroup(RefValues.CunningText)]
         [SettingPropertyFloatingInteger(RefValues.NoiseSuppressionBonusText, -0.03f, 0.03f, "0.00 %", Order = 0, RequireRestart = false, HintText = RefValues.GenericFactorHintText)]
-        public float NoiseSuppressionBonusValue { get; set; } = 0.002f;
+        public float NoiseSuppressionBonusValue { get; set; } = 0.0025f;
 
         // ---------------------- Social SKILLS ---------------------- //
 

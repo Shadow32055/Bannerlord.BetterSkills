@@ -439,7 +439,7 @@ namespace BetterSkills.Patches
 
                 _effectSneakDamage(__instance).Initialize(
                     new TextObject("{=vDieFIKM}Sneak attack damage +{a0}%", null),
-                    DefaultSkills.Steward,
+                    DefaultSkills.Roguery,
                     PartyRole.Personal,
                     BetterSkills.Settings.SneakDamageBonusValue,
                     EffectIncrementType.AddFactor,
@@ -448,7 +448,7 @@ namespace BetterSkills.Patches
 
                 _effectCrouchedSpeed(__instance).Initialize(
                    new TextObject("{=sTgjLrPX}Crouched speed +{a0}%", null),
-                   DefaultSkills.Steward,
+                   DefaultSkills.Roguery,
                    PartyRole.Personal,
                    BetterSkills.Settings.CrouchedSpeedBonusValue,
                    EffectIncrementType.AddFactor,
@@ -456,7 +456,7 @@ namespace BetterSkills.Patches
 
                 _effectNoiseSuppression(__instance).Initialize(
                    new TextObject("{=GzLd3ca9}Noise suppression -{a0}%", null),
-                   DefaultSkills.Steward,
+                   DefaultSkills.Roguery,
                    PartyRole.Personal,
                    BetterSkills.Settings.NoiseSuppressionBonusValue,
                    EffectIncrementType.AddFactor,
