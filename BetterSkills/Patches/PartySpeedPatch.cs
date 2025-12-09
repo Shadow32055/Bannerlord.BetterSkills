@@ -14,8 +14,6 @@ using TaleWorlds.Localization;
 namespace BetterSkills.Patches
 {
     class PartySpeedPatch {
-        private static bool patched = false;
-
         public static bool PatchPartySpeedModel(Harmony harmonyInstance) {
             try {
                 var targetType = typeof(DefaultPartySpeedCalculatingModel);
